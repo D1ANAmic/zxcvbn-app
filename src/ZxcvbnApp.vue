@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/password-policies">Password Policies</router-link> |
-      <router-link to="/password-attacks">Password Attacks</router-link>
+      <router-link to="/password-policies">Start</router-link>
+<!--      <router-link to="/password-attacks">Password Attacks</router-link>-->
     </nav>
     <router-view/>
   </div>

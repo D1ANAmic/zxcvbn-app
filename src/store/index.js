@@ -7,9 +7,12 @@ export default new Vuex.Store({
 	state: {
 		modalOpen: false,
 		zxcvbnObject: null,
-		allPages: 10,
-		currentPage: 1
-
+		currentPage: 1,
+		pages:
+			{
+				1 : 'password-policies',
+				2 : 'password-attacks'
+			}
 	},
 	mutations: {
 		SET_MODAL_OPEN(state, isModalOpen) {
