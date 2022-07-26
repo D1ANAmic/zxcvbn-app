@@ -9,8 +9,10 @@
           </label>
           <input
               ref="input"
-              class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password-check" type="text" placeholder="zxcvbn"
+              class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password-check" type="text" placeholder=""
               v-model="value"/>
+          <Button :text="'Submit'" :handle-click="handlePasswordValidation">
+          </Button>
           <p class="peer-invalid:visible text-red-700 font-light">
             {{ errorMessage }}
           </p>
@@ -28,13 +30,15 @@
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import InnerCard from '@/components/cards/InnerCard';
+import Button from '@/components/button/Button';
 import { validatePassword } from '@/utils/validatePassword';
 
 export default {
 	components: {
 		PageCard,
 		Paragraph,
-		InnerCard
+		InnerCard,
+		Button
 	},
 	data(){
 		return {
@@ -42,13 +46,16 @@ export default {
 			errorMessage: ''
 		};
 	},
-	watch: {
+	/*	watch: {
 		value() {
 			this.errorMessage = this.validatePassword(this.value, this.$refs.input);
 		}
-	},
+	},*/
 	methods: {
-		validatePassword
+		validatePassword,
+		handlePasswordValidation () {
+			this.errorMessage = this.validatePassword(this.value, this.$refs.input);
+		}
 	}
 };
 </script>
