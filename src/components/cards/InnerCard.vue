@@ -16,23 +16,11 @@
 export default {
 	data() {
 		return {
-			imageSources: [
-				require('@/assets/images/dumbPasswords/admiral.png')
-				/*				require('@/assets/images/dumbPasswords/adp.png'),
-				require('@/assets/images/dumbPasswords/aetna.png'),
-				require('@/assets/images/dumbPasswords/aigues_barcelona.png'),
-				require('@/assets/images/dumbPasswords/airaisa.png')*/
-			]
+			imageSources: []
 		};
 	},
 	computed: {},
 	methods: {
-		goLeft() {
-			console.log('Previous');
-		},
-		goRight() {
-			console.log('Next');
-		},
 		getImageAltText(source) {
 			if (! source || ! source.length) {
 				return 'undefined';
@@ -40,7 +28,27 @@ export default {
 			const arr = source.split('/');
 
 			return arr[arr.length - 1].split('.')[0];
+		},
+		populateImages() {
+			//webpack function to get all files in a specified folder
+			const context = require.context(
+				'@/assets/images/dumbPasswords/',
+				true,
+				/^\.\/.*$/
+			);
+			console.log(context);
+			context
+				.keys()
+				.forEach((key) =>
+					this.imageSources.push(
+						//populate imageSources array with image paths
+						require(`@/assets/images/dumbPasswords/${key.replace('./', '')}`)
+					)
+				);
 		}
+	},
+	mounted() {
+		this.populateImages();
 	}
 };
 </script>
