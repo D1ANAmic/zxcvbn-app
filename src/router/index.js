@@ -9,12 +9,12 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/password-policies',
-		name: 'password-policies',
+		name: 'Sign up please',
 		component: PasswordPoliciesView
 	},
 	{
 		path: '/password-attacks',
-		name: 'password-attacks',
+		name: 'How attackers steal your password',
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.

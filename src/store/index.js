@@ -8,11 +8,19 @@ export default new Vuex.Store({
 		modalOpen: false,
 		zxcvbnObject: null,
 		currentPage: 1,
-		pages:
+		// maybe populate it with the routes later? only possible if all routes are only pages that should be displayed in the menu
+		pages: [
 			{
-				1 : 'password-policies',
-				2 : 'password-attacks'
+				pageNumber: 1,
+				name: 'Sign up please',
+				path: '/password-policies'
+			},
+			{
+				pageNumber: 2,
+				name: 'How attackers steal your password',
+				path: '/password-attacks'
 			}
+		]
 	},
 	mutations: {
 		SET_MODAL_OPEN(state, isModalOpen) {

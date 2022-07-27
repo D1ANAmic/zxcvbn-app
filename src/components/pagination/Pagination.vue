@@ -7,7 +7,7 @@
           <i class="fa-solid fa-chevron-left"></i>
         </template>
       </Button>
-      <Button :handle-click="handlePageIncrement" :disabled="currentPage === pageNumber">
+      <Button :handle-click="handlePageIncrement" :disabled="currentPage === totalPages">
         <template #icon>
           <i class="fa-solid fa-chevron-right text-font-dark"></i>
         </template>
@@ -17,7 +17,7 @@
       {{ currentPage }}
     </span>
     <span aria-label="All pages" class="">
-      {{ ` / ${pageNumber}` }}
+      {{ ` / ${totalPages}` }}
     </span>
   </div>
 </template>
@@ -32,33 +32,35 @@ export default {
 	},
 	data() {
 		return {
-			pageNumber : 1,
+			totalPages : 0,
 			buttonDisabled: false
 
 		};
 	},
 	computed: {
-		...mapState(['currentPage', 'allPages', 'pages'])
+		...mapState(['currentPage', 'pages'])
 	},
 	methods: {
 		handlePageIncrement() {
-			if (this.currentPage < this.pageNumber) {
+			if (this.currentPage < this.totalPages) {
 				this.$store.commit('SET_CURRENT_PAGE', this.currentPage + 1);
-				this.$router.push(this.pages[this.currentPage]);
+				console.log(this.currentPage);
+				console.log(this.totalPages);
+				this.$router.push(this.pages[this.currentPage - 1]['path']);
 			}
 		},
 		handlePageDecrement() {
-			if (this.currentPage > 1) {
+			if (this.currentPage > 0) {
 				this.$store.commit('SET_CURRENT_PAGE', this.currentPage - 1);
-				this.$router.push(this.pages[this.currentPage]);
+				this.$router.push(this.pages[this.currentPage - 1]['path']);
 			}
 		},
 		getPageNumber() {
-			return Object.keys(this.pages).length;
+			return Object.keys(this.pages).length ;
 		}
 	},
 	created() {
-		this.pageNumber = this.getPageNumber();
+		this.totalPages = this.getPageNumber();
 	}
 };
 </script>
