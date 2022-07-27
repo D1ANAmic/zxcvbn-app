@@ -14,6 +14,12 @@ module.exports = {
 				'third': '#F1A864',
 				'font-dark': '#485258',
 				'font-light': '#fff'
+			},
+			height: {
+				'80vh': '80vh'
+			},
+			width: {
+				'80vw': '80vw'
 			}
 		}
 	},
