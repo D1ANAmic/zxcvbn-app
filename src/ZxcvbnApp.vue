@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-    <nav>
+  <div id="app" class="flex h-screen">
+    <nav class="absolute">
       <router-link to="/password-policies">Start</router-link>
-<!--      <router-link to="/password-attacks">Password Attacks</router-link>-->
+      <!--      <router-link to="/password-attacks">Password Attacks</router-link>-->
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 

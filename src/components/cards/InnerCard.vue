@@ -36,7 +36,6 @@ export default {
 				true,
 				/^\.\/.*$/
 			);
-			console.log(context);
 			context
 				.keys()
 				.forEach((key) =>
