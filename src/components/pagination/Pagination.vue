@@ -1,15 +1,15 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div>
+  <div class="text-center">
     <div>
-      <Button :handle-click="handlePageDecrement" :disabled="currentPage === 1">
+      <Button :handle-click="handlePageDecrement" :disabled="currentPage === 1" class="m-3">
         <template #icon>
-          <i class="fa-solid fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-left text-dark"></i>
         </template>
       </Button>
-      <Button :handle-click="handlePageIncrement" :disabled="currentPage === totalPages">
+      <Button :handle-click="handlePageIncrement" :disabled="currentPage === totalPages" class="m-3">
         <template #icon>
-          <i class="fa-solid fa-chevron-right text-font-dark"></i>
+          <i class="fa-solid fa-chevron-right text-dark"></i>
         </template>
       </Button>
     </div>
