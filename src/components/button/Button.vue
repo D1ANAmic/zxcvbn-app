@@ -18,7 +18,7 @@ export default {
 	},
 	data() {
 		return {
-			defaultButtonClasses: 'rounded-md border px-4 py-2 bg-secondary'
+			defaultButtonClasses: 'px-4 py-2 border-[1px] border-secondary bg-secondary text-font-light transition delay-75 duration-500 ease-in-out hover:bg-third hover:text-secondary'
 		};
 	},
 	computed: {
