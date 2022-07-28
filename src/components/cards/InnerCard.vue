@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative m-auto h-[500px] w-11/12 max-w-sm flex-col justify-center rounded-3xl bg-white p-2.5 lg:flex lg:max-w-full"
+    class="relative m-auto h-[500px] w-11/12 flex flex-col justify-center items-center rounded bg-white p-2.5"
   >
     <img
-      class="absolute h-4/5 self-center"
+      class="absolute max-h-[80%] max-w-[80%] self-center"
       v-for="(source, index) in imageSources"
       :src="source"
       :key="`${source}--${index}`"
