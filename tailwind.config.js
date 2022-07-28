@@ -5,15 +5,18 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				poppins: '\'Poppins\', sans-serif'
+				openSans: '\'Open Sans\', sans-serif'
 
 			},
 			colors: {
-				'primary': '#FBD36B',
-				'secondary': '#FB896B',
+				'primary': '#e1f396',
+				'secondary': '#146460',
 				'third': '#F1A864',
 				'font-dark': '#485258',
 				'font-light': '#fff'
+			},
+			backgroundImage: {
+				'app-background': 'url(\'./images/app-background2.jpg\')'
 			},
 			height: {
 				'80vh': '80vh'

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex h-screen">
+  <div id="app" class="flex h-screen bg-app-background">
     <nav class="absolute">
       <router-link to="/password-policies">Start</router-link>
       <!--      <router-link to="/password-attacks">Password Attacks</router-link>-->
