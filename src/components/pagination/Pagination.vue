@@ -2,12 +2,20 @@
 <template>
   <div class="text-center">
     <div>
-      <Button :handle-click="handlePageDecrement" :disabled="currentPage === 1" class="m-3">
+      <Button
+        :handle-click="handlePageDecrement"
+        :is-disabled="currentPage === 1"
+        class="m-3"
+      >
         <template #icon>
           <i class="fa-solid fa-chevron-left text-dark"></i>
         </template>
       </Button>
-      <Button :handle-click="handlePageIncrement" :disabled="currentPage === totalPages" class="m-3">
+      <Button
+        :handle-click="handlePageIncrement"
+        :is-disabled="currentPage === totalPages"
+        class="m-3"
+      >
         <template #icon>
           <i class="fa-solid fa-chevron-right text-dark"></i>
         </template>
@@ -27,14 +35,13 @@ import Button from '@/components/button/Button';
 import { mapState } from 'vuex';
 
 export default {
-	components:{
+	components: {
 		Button
 	},
 	data() {
 		return {
-			totalPages : 0,
+			totalPages: 0,
 			buttonDisabled: false
-
 		};
 	},
 	computed: {
@@ -56,7 +63,7 @@ export default {
 			}
 		},
 		getPageNumber() {
-			return Object.keys(this.pages).length ;
+			return Object.keys(this.pages).length;
 		}
 	},
 	created() {
