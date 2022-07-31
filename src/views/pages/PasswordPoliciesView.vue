@@ -54,7 +54,6 @@ import Paragraph from '@/components/text/Paragraph';
 import InnerCard from '@/components/cards/InnerCard';
 import Button from '@/components/button/Button';
 import { validatePassword } from '@/utils/validatePassword';
-import ClickOutside from 'vue-click-outside';
 
 export default {
 	components: {
@@ -89,9 +88,6 @@ export default {
 			}
 			this.inputFocused = false;
 		}
-	},
-	directives: {
-		ClickOutside
 	}
 };
 </script>
