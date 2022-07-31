@@ -2,36 +2,59 @@
   <PageCard :header="'Sign up please'">
     <template>
       <main>
-        <Paragraph :paragraph="'Don\'t we all dread the following scenario: In order to use any kind of online service these days, it\'s inevitable to create an account first. While in theory this procedure sounds like just a short inconvenience, in reality most of the time is spent on finding a suitable password that complies with the website\'s password policy.'"/>
+        <Paragraph
+          :paragraph="'Don\'t we all dread the following scenario: In order to use any kind of online service these days, it\'s inevitable to create an account first. While in theory this procedure sounds like just a short inconvenience, in reality most of the time is spent on finding a suitable password that complies with the website\'s password policy.'"
+        />
         <div class="mb-4 mt-5">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="password-check">
-            Submit your password
-          </label>
-          <input
+          <div
+            v-click-outside="setInputUnFocused"
+            class="relative inline-block my-4 border-b-[1px] border-l-[1px] border-font-dark focus-within:border-secondary"
+          >
+            <label
+              class="absolute top-0 left-2 duration-300 origin-left"
+              :class="{
+                '-translate-y-6 scale-75 transform text-secondary': inputFocused,
+              }"
+              for="password-check"
+            >
+              Submit your password
+            </label>
+            <input
+              @focus="setInputFocused"
+              @keyup.enter="handlePasswordValidation"
               ref="input"
-              class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password-check" type="text" placeholder=""
-              v-model="value"/>
+              class="block w-full p-2 appearance-none bg-transparent focus:outline-none"
+              id="password-check"
+              type="text"
+              placeholder=""
+              v-model="value"
+            />
+          </div>
           <Button :text="'Submit'" :handle-click="handlePasswordValidation">
           </Button>
-          <p class="peer-invalid:visible text-red-700 font-light">
+          <p class="font-light text-red-700 peer-invalid:visible">
             {{ errorMessage }}
           </p>
         </div>
-        <Paragraph :paragraph="'Doesn\'t this make you want to give up? Well, you’re not alone. Most of these password policies are not only very inconvenient to follow but in addition they differ from website to website.'"/>
+        <Paragraph
+          :paragraph="'Doesn\'t this make you want to give up? Well, you’re not alone. Most of these password policies are not only very inconvenient to follow but in addition they differ from website to website.'"
+        />
         <InnerCard></InnerCard>
-        <Paragraph :paragraph="'But why do we even need all these stupid policies to begin with?'"></Paragraph>
+        <Paragraph
+          :paragraph="'But why do we even need all these stupid policies to begin with?'"
+        ></Paragraph>
       </main>
     </template>
   </PageCard>
 </template>
 
 <script>
-
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import InnerCard from '@/components/cards/InnerCard';
 import Button from '@/components/button/Button';
 import { validatePassword } from '@/utils/validatePassword';
+import ClickOutside from 'vue-click-outside';
 
 export default {
 	components: {
@@ -40,22 +63,35 @@ export default {
 		InnerCard,
 		Button
 	},
-	data(){
+	data() {
 		return {
 			value: '',
-			errorMessage: ''
+			errorMessage: '',
+			inputFocused: false
 		};
 	},
-	/*	watch: {
+	watch: {
 		value() {
-			this.errorMessage = this.validatePassword(this.value, this.$refs.input);
+			/*	this.errorMessage = this.validatePassword(this.value, this.$refs.input);*/
 		}
-	},*/
+	},
 	methods: {
 		validatePassword,
-		handlePasswordValidation () {
+		handlePasswordValidation() {
 			this.errorMessage = this.validatePassword(this.value, this.$refs.input);
+		},
+		setInputFocused() {
+			this.inputFocused = true;
+		},
+		setInputUnFocused() {
+			if (this.value.length > 0) {
+				return;
+			}
+			this.inputFocused = false;
 		}
+	},
+	directives: {
+		ClickOutside
 	}
 };
 </script>
