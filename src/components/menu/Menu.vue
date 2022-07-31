@@ -3,7 +3,7 @@
   <div class="h-full basis-1/4 rounded-l-3xl bg-secondary p-10 pl-15 text-left text-third">
     <div class="h-full flex flex-col justify-center">
       <ul class="h-1/2 flex flex-col justify-evenly m-auto ">
-        <li v-for="page in pages" :key="page.name" class="rounded p-2" :class="{'font-extrabold bg-font-light bg-opacity-30': page.name === getCurrentPageName}"><a @click="getPageLink(page)" @keyup.enter="getPageLink(page)">{{ page.name }}</a></li>
+        <li v-for="page in pages" :key="page.name" class="rounded p-2 cursor-pointer" :class="{'font-extrabold bg-font-light bg-opacity-30': page.name === getCurrentPageName}"><a @click="getPageLink(page)" @keyup.enter="getPageLink(page)">{{ page.name }}</a></li>
         <li class="rounded p-2">Bla</li>
         <li class="rounded p-2">Bli</li>
         <li class="rounded p-2">Blubb</li>
@@ -30,10 +30,7 @@ export default {
 	computed: {
 		...mapState(['currentPage', 'pages']),
 		getCurrentPageName() {
-			return this.pages[this.currentPage - 1]['name'];
-		},
-		getCurrentPagePath() {
-			return this.pages[this.currentPage - 1]['path'];
+			return this.pages[this.currentPage - 1].name;
 		}
 	},
 	methods: {
