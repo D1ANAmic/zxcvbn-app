@@ -3,6 +3,7 @@
     <template>
       <main>
         <Paragraph :paragraph="'These are the common ways attackers get your password.'"/>
+        <Carousel></Carousel>
       </main>
     </template>
   </PageCard>
@@ -12,13 +13,13 @@
 
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
-import InnerCard from '@/components/cards/InnerCard';
-import { validatePassword } from '@/utils/validatePassword';
+import Carousel from '@/components/carousel/Carousel';
 
 export default {
 	components: {
 		PageCard,
-		Paragraph
+		Paragraph,
+		Carousel
 	}
 };
 </script>
