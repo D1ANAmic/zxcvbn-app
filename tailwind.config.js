@@ -23,6 +23,21 @@ module.exports = {
 			},
 			width: {
 				'80vw': '80vw'
+			},
+			keyframes: {
+				appear: {
+					'0%':{
+						transform: 'scale(3,3)',
+						opacity: '0'
+					},
+					'100%':{
+						transform: 'scale(1,1)',
+						opacity: '1'
+					}
+				}
+			},
+			animation: {
+				appear: 'appear 5s ease-in-out infinite'
 			}
 		}
 	},
