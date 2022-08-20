@@ -16,7 +16,14 @@ module.exports = {
 				'font-light': '#fff'
 			},
 			backgroundImage: {
-				'app-background': 'url(\'./images/app-background2.jpg\')'
+				'app-background': 'url(\'./images/app-background2.jpg\')',
+				/*carousel images*/
+				'bruteforce': 'url(\'./images/passwordAttacks/brute_force.png\')',
+				'keylogger': 'url(\'./images/passwordAttacks/keylogger.png\')',
+				'dictionary': 'url(\'./images/passwordAttacks/dictionary_attack.png\')',
+				'credential-stuffing': 'url(\'./images/passwordAttacks/credential_stuffing.png\')',
+				'password-spraying': 'url(\'./images/passwordAttacks/password_spraying.png\')',
+				'phishing': 'url(\'./images/passwordAttacks/phishing.png\')'
 			},
 			height: {
 				'80vh': '80vh'
@@ -37,7 +44,7 @@ module.exports = {
 				}
 			},
 			animation: {
-				appear: 'appear 5s ease-in-out infinite'
+				appear: 'appear 5s ease-in-out'
 			}
 		}
 	},

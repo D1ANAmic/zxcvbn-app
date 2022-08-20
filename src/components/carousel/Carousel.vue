@@ -2,63 +2,116 @@
 <template>
   <div class="relative">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+    <div class="relative h-80 overflow-hidden rounded-lg">
       <!-- Carousel Items -->
-      <div v-for="(item, index) in carouselItems"
-           :key="index"
-           :id="`carousel-item-${ index }`"
-           class="duration-700 ease-in-out"
-           data-carousel-item="active">
-        <img
-            :src="item.image"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."
-            :class="{'hidden': index !== getCurrentElement }">
+      <div
+        v-for="(item, index) in carouselItems"
+        :key="index"
+        :id="`carousel-item-${index}`"
+        data-carousel-item="active"
+        class="absolute top-1/2 left-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-font-light transition-opacity duration-1000 ease-in-out"
+        alt="..."
+        :class="index !== getCurrentElement ? 'opacity-0' : 'opacity-1'"
+      >
+        <div
+          class="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-10"
+          :class="item.bgImage"
+        ></div>
+        <div class="p-50 m-auto flex h-full items-center p-32 text-center">
+          <div>
+            <h2 class="mb-3 text-2xl font-extrabold">{{ item.headline }}</h2>
+            <p>{{ item.paragraph }}</p>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Slider indicators -->
-    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-      <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
-      <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
-      <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"></button>
-      <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"></button>
+    <div
+      class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3"
+    >
+      <div
+        v-for="(item, index) in carouselItems"
+        :key="index"
+        :id="`carousel-indicator-${index}`"
+        class="h-3 w-3 cursor-pointer rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50"
+        @click="setCurrentSlide(index)"
+      ></div>
     </div>
     <!-- Slider controls -->
-    <button @click="onPrev()" id="data-carousel-prev" type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span class="hidden">Previous</span>
-        </span>
+    <button
+      @click="onPrev()"
+      id="data-carousel-prev"
+      type="button"
+      class="absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
+    >
+      <span
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+      >
+        <i class="fa-solid fa-chevron-left text-dark"></i>
+      </span>
     </button>
-    <button @click="onNext()" id="data-carousel-next" type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            <span class="hidden">Next</span>
-        </span>
+    <button
+      @click="onNext()"
+      id="data-carousel-next"
+      type="button"
+      class="absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
+    >
+      <span
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+      >
+        <i class="fa-solid fa-chevron-right text-dark"></i>
+      </span>
     </button>
   </div>
-
 </template>
 
 <script>
-
 import Button from '@/components/button/Button';
 
 export default {
-	components:{
+	components: {
 		/*Button*/
 	},
 	data() {
 		return {
 			currentElement: 0,
 			carouselItems: [
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/admiral.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/adp.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/aetna.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/aigues_barcelona.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/airaisa.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/aigues_barcelona.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/aetna.png') },
-				{ headline: '', paragraph: '', image: require('@/assets/images/dumbPasswords/admiral.png') }
+				{
+					headline: 'Phishing',
+					paragraph:
+            'Phishing is a strategy of social engineering where the attacker attempts to trick users into supplying their credentials disguised as a legitimate site or service. Phishing attacks are commonly conducted via email. ',
+					bgImage: 'bg-phishing'
+				},
+				{
+					headline: 'Keylogging',
+					paragraph:
+            'Keyloggers are malicious pieces of software. Once they run on the user’s device, they record all keyboard strokes that are typed and pass them to the attacker. In a password attack, the keylogger records not only the user name and password but also the service where those credentials are used.',
+					bgImage: 'bg-keylogger'
+				},
+				{
+					headline: 'Brute Force Attack',
+					paragraph:
+            'A brute force attack is a trial-and-error method. By using Most of the time Brute Force Attacks are executed/conducted with dedicated algorithms by using different combinations of characters until the correct combination is found. They are most efficient if the pool of possible symbols is known to the attacker and in general for rather short passwords. ',
+					bgImage: 'bg-bruteforce'
+				},
+				{
+					headline: 'Dictionary Attacks',
+					paragraph:
+            'Dictionary Attacks are a subset of Brute Force Attacks where password dictionaries or lists of common passwords are tried against a login. Most of these lists derive from former breaches where credential information was stolen from big companies and later appeared somewhere on the internet.',
+					bgImage: 'bg-dictionary'
+				},
+				{
+					headline: 'Password spraying',
+					paragraph:
+            'For Password spraying, the same password is used against multiple logins which makes it less suspicious than multiple passwords against a single account. As a result the attack isn’t easily detected by most security systems.',
+					bgImage: 'bg-password-spraying'
+				},
+				{
+					headline: 'Credential stuffing',
+					paragraph:
+            'Credential stuffing is another subset of Brute Force Attacks where a cyber attack in which credentials obtained from a data breach on one service are used to attempt to log in to another unrelated service.',
+					bgImage: 'bg-credential-stuffing'
+				}
 			]
 		};
 	},
@@ -69,18 +122,26 @@ export default {
 	},
 	methods: {
 		onNext() {
-			if (this.currentElement >= this.carouselItems?.length) {
+			if (this.currentElement >= this.carouselItems?.length - 1) {
 				this.currentElement = 0;
+
+				return;
 			}
 			//const currentEl = document.getElementById(`carousel-item-${ this.currentElement }`);
 			//console.log('next slider item is shown: ', currentEl, 'Data: ', currentEl.dataset.carouselItem);
 			this.currentElement += 1;
 		},
 		onPrev() {
-			if (this.currentElement < 0) {
-				this.currentElement = this.carouselItems?.length;
+			if (this.currentElement <= 0) {
+				this.currentElement = this.carouselItems?.length - 1;
+
+				return;
 			}
 			this.currentElement -= 1;
+		},
+		setCurrentSlide(index) {
+			this.currentElement = index;
+			console.log(index);
 		}
 	}
 };
