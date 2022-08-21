@@ -25,6 +25,11 @@ export default new Vuex.Store({
 				pageNumber: 3,
 				name: 'How password strength is calculated',
 				path: '/password-strength-estimation'
+			},
+			{
+				pageNumber: 4,
+				name: 'What is zxcvbn?',
+				path: '/zxcvbn'
 			}
 		]
 	},
