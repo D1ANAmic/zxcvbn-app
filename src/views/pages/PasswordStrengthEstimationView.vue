@@ -33,7 +33,7 @@
               />
             </div>
             <div
-              v-for="(alphabet, key, index) in alphabets"
+              v-for="(alphabet, _, index) in alphabets"
               :key="index"
               :id="alphabet"
               class="tex2jax_ignore mb-2"
@@ -44,8 +44,8 @@
                 name="alphabet"
                 :value="alphabet"
                 class="mr-2"
-                :checked="alphabet.isChecked"
-                v-model="radio"
+                :checked="index === 0"
+                @click="handleChecked(alphabet.range)"
               />
               <label :for="alphabet">{{ alphabet.label }}</label
               ><br />
@@ -80,8 +80,6 @@ export default {
 	data() {
 		return {
 			slider: '',
-			radio: '',
-			passwordRange: 0,
 			entropy: Math.log2(Math.pow(1, this.passwordSliderLength)),
 			alphabets: {
 				lower: {
@@ -102,6 +100,7 @@ export default {
 					range: 95
 				}
 			},
+			passwordRange: 26,
 			passwordGuessesString: 'With that in mind, the password $P@ssw0rd!$ should be at least a decent candidate, right? $$g = \\frac{95^9}{2} = ' + this.calculateAverageGuesses(95, 9) + '$$',
 			passwordEntropyString: '$$H = log_{2}(95^9) = ' + this.calculateEntropy(95, 9) + '$$'
 		};
@@ -109,10 +108,9 @@ export default {
 	computed: {
 		...mapState(['passwordSliderLength']),
 		getEntropyCalculation() {
-			console.log(this.radio);
 
 			return (
-				'$H = log_{2}(N^{' +
+				'$H = log_{2}(' + this.passwordRange + '^{' +
         this.passwordSliderLength +
         '}) = ' +
         this.calculateEntropy(this.passwordRange, this.passwordSliderLength) +
@@ -124,13 +122,12 @@ export default {
 	watch: {
 		slider(value) {
 			this.$store.commit('SET_PASSWORD_SLIDER_LENGTH', value);
-		},
-		radio(value) {
-			console.log(value.range);
-			this.passwordRange = value.range;
 		}
 	},
 	methods: {
+		handleChecked(range) {
+			this.passwordRange = range;
+		},
 		calculateEntropy(range, length) {
 			return (Math.round( Math.log2(Math.pow(range, length)) * 100 ) / 100);
 		},
