@@ -10,7 +10,10 @@ const routes = [
 	{
 		path: '/password-policies',
 		name: 'Sign up please',
-		component: PasswordPoliciesView
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "password-policies" */ '@/views/pages/PasswordPoliciesView')
 	},
 	{
 		path: '/password-attacks',
@@ -18,7 +21,15 @@ const routes = [
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ '@/views/pages/PasswordAttacksView')
+		component: () => import(/* webpackChunkName: "password-attacks" */ '@/views/pages/PasswordAttacksView')
+	},
+	{
+		path: '/password-strength-estimation',
+		name: 'How password strength is calculated',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "password-strength-estimation" */ '@/views/pages/PasswordStrengthEstimationView')
 	}
 ];
 

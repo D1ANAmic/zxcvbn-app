@@ -1,5 +1,6 @@
 <template>
-  <div id="app" class="flex h-screen bg-app-background">
+<!--tex2jax_ignore prevents Mathjax from processing the whole document, processable regions are additionally indicated by tex2jax_process-->
+  <div id="app" class="flex h-screen bg-app-background tex2jax_ignore">
     <nav class="absolute">
       <router-link to="/password-policies">Start</router-link>
       <!--      <router-link to="/password-attacks">Password Attacks</router-link>-->
