@@ -30,6 +30,11 @@ export default new Vuex.Store({
 				pageNumber: 4,
 				name: 'What is zxcvbn?',
 				path: '/zxcvbn'
+			},
+			{
+				pageNumber: 5,
+				name: 'Matching: Finding all the patterns',
+				path: '/matching'
 			}
 		]
 	},
