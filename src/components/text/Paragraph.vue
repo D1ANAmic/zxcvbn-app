@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-<p class="text-base font-poppins leading-relaxed text-grey-800 my-12">
-  {{ paragraph }}
+<p class="text-base font-poppins leading-relaxed text-grey-800 my-12"
+v-html="paragraph">
+<!--  {{ paragraph }}-->
 </p>
 </template>
 

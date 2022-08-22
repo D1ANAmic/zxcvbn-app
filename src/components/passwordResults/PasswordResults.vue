@@ -1,6 +1,6 @@
 <template>
   <div>
-  <table class=" text-left w-2/3">
+  <table class=" text-left w-2/3 mb-10">
     <tbody>
     <tr
         class=" border-b dark:border-font-dark"
@@ -45,7 +45,7 @@
         class=" border-b dark:border-font-dark"
     >
       <td>Score: </td>
-      <td>{{ zxcvbnObject.score}}</td>
+      <td>{{ zxcvbnObject.score}}/4</td>
     </tr>
     <tr
         class=" border-b dark:border-font-dark"
@@ -70,7 +70,7 @@
     <br>
   <table
       v-if="isRawDataShown"
-      class=" text-left w-2/3">
+      class=" text-left w-2/3 mt-10 mb-10">
     <tbody>
     <tr
         class=" border-b dark:border-font-dark"

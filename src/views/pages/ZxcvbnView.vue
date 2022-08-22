@@ -8,6 +8,7 @@
         <Paragraph
           paragraph="Zxcvbn on the other hand follows a different approach. The password strength estimator was developed by <a href='https://blog.dropbox.com/authors/dan-wheeler' target='_blank' class='underline'>Dan Wheeler</a> and works with a more feasible estimation."
         ></Paragraph>
+        <Paragraph paragraph="See for yourself:"></Paragraph>
         <div>
           <div class="mb-4 mt-5">
             <label
@@ -28,6 +29,15 @@
             <PasswordResults :zxcvbnObject="zxcvbnObject" />
           </div>
         </div>
+        <Paragraph paragraph="Fair enough. But how does Zxcvbn actually work? The algorithm can be devided in three essential parts:"></Paragraph>
+        <em>
+        <ul>
+          <li>Matching</li>
+          <li>Estimating</li>
+          <li>Searching</li>
+        </ul>
+        </em>
+        <Paragraph paragraph="Let's explore them in the following sections."></Paragraph>
       </main>
     </template>
   </PageCard>
