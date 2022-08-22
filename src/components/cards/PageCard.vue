@@ -5,7 +5,7 @@
     <Menu />
     <div class="flex h-full basis-3/4 flex-col overflow-y-auto p-10">
       <header>
-        <h1 class="text-grey-600 mt-0 mb-2 text-5xl font-medium leading-tight">
+        <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight">
           {{ header }}
         </h1>
       </header>
