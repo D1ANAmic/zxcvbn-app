@@ -1093,6 +1093,42 @@
 
           </Button>
         </div>
+
+
+        <div class="mb-20">
+          <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Date</h2>
+          <Paragraph paragraph="Numerical strings with 4 to 8 adjacent digits are being checked for date representations. To be identified as a date, the following requirements have to be met:"></Paragraph>
+          <em>
+          <ul class="mb-10">
+            <li>The year is represented by 2 or 4 digits</li>
+            <li>The year cannot be in the middle of the date representation</li>
+            <li>The month lies between 1 and 12</li>
+            <li>The day lies between 1 and 31</li>
+          </ul>
+          </em>
+          <em>
+            <div class="rounded bg-font-light p-10">
+              <div class="relative mb-10">
+                <span id= "date" class="block top-0">191596</span>
+              </div>
+              <div>
+              <div id="matchedDate" class=" inline transition duration-1000 linear">1915<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>9<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message1 transition duration-1000 linear" :class="dateElementVisibility.displayMessage1 ? 'opacity-1' : 'opacity-0'">Closest to the current year</span></div>
+              <div>19<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>15<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message2 transition duration-1000 linear" :class="dateElementVisibility.displayMessage2 ? 'opacity-1' : 'opacity-0'">Not a valid date</span></div>
+              <div>1<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>9<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>1596&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message3 transition duration-1000 linear" :class="dateElementVisibility.displayMessage3 ? 'opacity-1' : 'opacity-0'">Further from the current year</span></div>
+              </div>
+
+            </div>
+          </em>
+          <Button :handle-click="handleDateAnimationButton"
+                  :is-disabled="animationButtons.dateAnimationRunning">
+            <template #icon>
+            <span
+                v-html='`<i class="fa-solid fa-play"></i>`'></span>
+              <span> Play</span>
+            </template>
+
+          </Button>
+        </div>
       </main>
     </template>
   </PageCard>
@@ -1115,12 +1151,20 @@ export default {
 				tokensAnimationRunning: false,
 				sequenceAnimationRunning: false,
 				repeatAnimationRunning: false,
-				keyboardAnimationRunning: false
+				keyboardAnimationRunning: false,
+				dateAnimationRunning: false
 			},
 			firstTwentyWordlist: '123456,password,12345678,qwerty,123456789,12345,1234,111111,1234567,dragon,123123,baseball,abc123,football,monkey,letmein,shadow,master,696969,mustang'.split(','),
 			tokenTransformed: false,
 			sequenceClasses: ['sequence1', 'sequence2', 'sequence3', 'sequence4'],
-			keyboardPatternArray: ['rect5394-9', 'rect5396-4', 'rect5398-7', 'rect5370-8', 'rect5372-9', 'rect5346-8', 'rect5346-9', 'rect5348-7']
+			keyboardPatternArray: ['rect5394-9', 'rect5396-4', 'rect5398-7', 'rect5370-8', 'rect5372-9', 'rect5346-8', 'rect5346-9', 'rect5348-7'],
+			dateElementVisibility: {
+				displayDashes: false,
+				displayMessage1: false,
+				displayMessage2: false,
+				displayMessage3: false
+
+			}
 		};
 
 	},
@@ -1320,6 +1364,52 @@ export default {
 					key.style.fill = 'none';
 				}
 			});
+		},
+
+
+		handleDateAnimationButton() {
+			if (this.animationButtons.dateAnimationRunning) {
+				return;
+			}
+			this.startDateAnimation();
+		},
+		startDateAnimation(){
+			this.animationButtons.dateAnimationRunning = true;
+			this.resetDateAnimation();
+			const timeOut = 1500;
+
+			setTimeout(() => {
+				this.dateElementVisibility.displayDashes = true;
+
+			}, timeOut);
+
+			setTimeout(() => {
+				this.dateElementVisibility.displayMessage2 = true;
+
+			}, timeOut * 2 );
+
+			setTimeout(() => {
+				this.dateElementVisibility.displayMessage3 = true;
+
+			}, timeOut * 3 );
+
+			setTimeout(() => {
+				this.dateElementVisibility.displayMessage1 = true;
+
+			}, timeOut * 4 );
+
+			setTimeout(() => {
+				document.getElementById('matchedDate').classList.add('bg-third');
+				this.animationButtons.dateAnimationRunning = false;
+
+			}, timeOut * 5 );
+
+		},
+		resetDateAnimation(){
+			Object.keys(this.dateElementVisibility).forEach((element) => {
+				this.dateElementVisibility[element] = false;
+			});
+			document.getElementById('matchedDate').classList.remove('bg-third');
 		}
 
 	}
