@@ -1106,6 +1106,7 @@
             <li>The day lies between 1 and 31</li>
           </ul>
           </em>
+          <Paragraph paragraph="If several valid dates are possible, the one closest to the current date ist chosen."></Paragraph>
           <em>
             <div class="rounded bg-font-light p-10">
               <div class="relative mb-10">
@@ -1129,6 +1130,8 @@
 
           </Button>
         </div>
+
+        <Paragraph paragraph="Multiple matches out of these 5 categories can occur in one password. As for now it's not determined which of these patterns will be considered for the guessing and score evaluation."></Paragraph>
       </main>
     </template>
   </PageCard>
