@@ -4,14 +4,6 @@
     <div class="h-full flex flex-col justify-center">
       <ul class="h-1/2 flex flex-col justify-evenly m-auto ">
         <li v-for="page in pages" :key="page.name" class="rounded p-2 cursor-pointer" :class="{'font-extrabold bg-font-light bg-opacity-30': page.name === getCurrentPageName}"><a @click="getPageLink(page)" @keyup.enter="getPageLink(page)">{{ page.name }}</a></li>
-        <li class="rounded p-2">Bla</li>
-        <li class="rounded p-2">Bli</li>
-        <li class="rounded p-2">Blubb</li>
-        <li class="rounded p-2">Bla</li>
-        <li class="rounded p-2">Bli</li>
-        <li class="rounded p-2">Blubb</li>
-        <li class="rounded p-2">Bli</li>
-        <li class="rounded p-2">Blubb</li>
       </ul>
     </div>
   </div>
