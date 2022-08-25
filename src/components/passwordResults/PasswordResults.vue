@@ -103,6 +103,9 @@ export default {
 		toggleRawData(){
 			this.isRawDataShown = ! this.isRawDataShown;
 		}
+	},
+	beforeDestroy() {
+		this.$store.commit('INIT_ZXCVBN_OBJECT', null);
 	}
 };
 </script>
