@@ -1104,18 +1104,19 @@
             <li>The year cannot be in the middle of the date representation</li>
             <li>The month lies between 1 and 12</li>
             <li>The day lies between 1 and 31</li>
+            <li>The date must be in the past</li>
           </ul>
           </em>
           <Paragraph paragraph="If several valid dates are possible, the one closest to the current date ist chosen."></Paragraph>
           <em>
             <div class="rounded bg-font-light p-10">
               <div class="relative mb-10">
-                <span id= "date" class="block top-0">191596</span>
+                <span id= "date" class="block top-0">211596</span>
               </div>
               <div>
-              <div id="matchedDate" class=" inline transition duration-1000 linear">1915<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>9<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message1 transition duration-1000 linear" :class="dateElementVisibility.displayMessage1 ? 'opacity-1' : 'opacity-0'">Closest to the current year</span></div>
-              <div>19<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>15<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message2 transition duration-1000 linear" :class="dateElementVisibility.displayMessage2 ? 'opacity-1' : 'opacity-0'">Not a valid date</span></div>
-              <div>1<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>9<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>1596&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message3 transition duration-1000 linear" :class="dateElementVisibility.displayMessage3 ? 'opacity-1' : 'opacity-0'">Further from the current year</span></div>
+              <div  class=" inline transition duration-1000 linear">2115<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>9<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message1 transition duration-1000 linear" :class="dateElementVisibility.displayMessage1 ? 'opacity-1' : 'opacity-0'">Lies in the future</span></div>
+              <div>21<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>15<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message2 transition duration-1000 linear" :class="dateElementVisibility.displayMessage2 ? 'opacity-1' : 'opacity-0'">Not a valid date</span></div>
+              <div id="matchedDate" >2<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>1<span class="dash" :class="dateElementVisibility.displayDashes ? '' : 'hidden'">-</span>1596&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="message3 transition duration-1000 linear" :class="dateElementVisibility.displayMessage3 ? 'opacity-1' : 'opacity-0'">Lies in the past</span></div>
               </div>
 
             </div>
@@ -1392,12 +1393,12 @@ export default {
 			}, timeOut * 2 );
 
 			setTimeout(() => {
-				this.dateElementVisibility.displayMessage3 = true;
+				this.dateElementVisibility.displayMessage1 = true;
 
 			}, timeOut * 3 );
 
 			setTimeout(() => {
-				this.dateElementVisibility.displayMessage1 = true;
+				this.dateElementVisibility.displayMessage3 = true;
 
 			}, timeOut * 4 );
 
