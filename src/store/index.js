@@ -35,6 +35,21 @@ export default new Vuex.Store({
 				pageNumber: 5,
 				name: 'Matching: Finding all the patterns',
 				path: '/matching'
+			},
+			{
+				pageNumber: 6,
+				name: 'Estimating: How many guesses per match?',
+				path: '/estimating'
+			},
+			{
+				pageNumber: 7,
+				name: 'Searching: Calculating the overall guesses',
+				path: '/searching'
+			},
+			{
+				pageNumber: 8,
+				name: 'Is Zxcvbn the solution to all our problems?',
+				path: '/conclusion'
 			}
 		]
 	},

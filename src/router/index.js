@@ -46,7 +46,32 @@ const routes = [
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component: () => import(/* webpackChunkName: "matching" */ '@/views/pages/MatchingView')
+	},
+	{
+		path: '/estimating',
+		name: 'Estimating: How many guesses per match?',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "estimating" */ '@/views/pages/EstimatingView')
+	},
+	{
+		path: '/searching',
+		name: 'Searching: Calculating the overall guesses',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "searching" */ '@/views/pages/SearchingView')
+	},
+	{
+		path: '/conclusion',
+		name: 'Is Zxcvbn the solution to all our problems?',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "conclusion" */ '@/views/pages/ConclusionView')
 	}
+
 ];
 
 const router = new VueRouter({
