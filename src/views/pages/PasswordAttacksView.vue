@@ -2,8 +2,11 @@
   <PageCard :header="'How attackers steal your passwords'">
     <template>
       <main>
-        <Paragraph :paragraph="'These are the common ways attackers get your password.'"/>
+        <Paragraph paragraph="Cyber crimes have been getting more and more over the last decades. Especially now that half our life is lived online, we need ways to protect our accounts against unauthorized access. Authentication via password has been around almost as long as computers themselves and the ways of cracking them are getting more and more clever by the minute."/>
+        <Paragraph paragraph="Here are the most common ways attackers get your password."/>
         <Carousel></Carousel>
+        <h2 class="mt-10 mb-6 text-3xl font-medium leading-tight">Online vs. Offline</h2>
+        <Paragraph paragraph="sdf"></Paragraph>
       </main>
     </template>
   </PageCard>
