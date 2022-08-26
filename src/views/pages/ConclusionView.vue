@@ -3,7 +3,7 @@
     <template>
       <main>
         <Paragraph
-            paragraph="Unfortunately not. But it efficiently shows one thing: The common approach to password composition does not provide us with more secure passwords. On the contrary. Policies, that prompt us to use a certain set of characters and length (Remeber? 8 characters, uppercase, digits, symbols) only result in 3 things:."/>
+            :paragraph="'Unfortunately not. But it efficiently shows one thing: The common approach to password composition does not provide us with more secure passwords. On the contrary. Policies, that prompt us to use a certain set of characters and length (Remeber? 8 characters, uppercase, digits, symbols) only result in 3 things:.'"/>
           <ul class="list-disc">
             <li>We're forced to integrate illogical characters in our password which makes it harder for the human brain to remember. </li>
             <li>So we come up with replacements like leetspeak, use keyboard patterns or sequences because we still want to be able to memorize the password.</li>
@@ -16,8 +16,8 @@
           <figcaption class="text-sm">Source: <a href="https://xkcd.com/936/">https://xkcd.com/936/</a></figcaption>
         </figure>
 
-        <Paragraph paragraph="Years of counterproductive password policies have planted a wrong idea of what an actual strong password looks like. Zxcvbn can help to show the actual strength with its estimation algorithms and could therefore replace common password validation on many websites. "/>
-        <Paragraph paragraph="Try it out once again:"/>
+        <Paragraph paragraph="Years of counterproductive password policies have planted the wrong idea of what an actual strong password looks like. Zxcvbn can help to show the actual strength with its estimation algorithms and could therefore replace common password validation on many websites. "/>
+        <Paragraph paragraph="Now, with everything you've learned so far, submit your password to the zxcvbn algorithm once again and watch the horse scale for reference."/>
         <div class="mb-4 mt-5">
           <div
               v-click-outside="setInputUnFocused"
@@ -45,15 +45,21 @@
           </div>
           <Button :text="'Submit'" :handle-click="handleZxcvbnEstimation">
           </Button>
-          <div class="mb-5">
-            <img src="../../assets/images/horseScale/horse_red.png" class="inline max-w-[50px] transition-opacity duration-500 ease-in-out" :class="renderHorses.red? '' : 'opacity-0'">
-            <img src="../../assets/images/horseScale/horse_orange.png" class="inline max-w-[50px] transition-opacity duration-500 ease-in-out" :class="renderHorses.orange? '' : 'opacity-0'">
-            <img src="../../assets/images/horseScale/horse_yellow.png" class="inline max-w-[50px] transition-opacity duration-500 ease-in-out" :class="renderHorses.yellow? '' : 'opacity-0'">
-            <img src="../../assets/images/horseScale/horse_green.png" class="inline max-w-[50px] transition-opacity duration-500 ease-in-out" :class="renderHorses.green? '' : 'opacity-0'">
-            <img src="../../assets/images/horseScale/horse_darkgreen.png" class="inline max-w-[50px] transition-opacity duration-500 ease-in-out" :class="renderHorses.darkgreen? '' : 'opacity-0'">
+          <div class="mb-10 relative">
+            <img src="../../assets/images/horseScale/horse_red.png" class="inline max-w-[50px] absolute left-0 transition-opacity duration-500 ease-in-out" :class="displayHorses.red? '' : 'opacity-0'">
+            <img src="../../assets/images/horseScale/horse_red_grey.png" class="inline max-w-[50px] absolute left-0transition-opacity duration-500 ease-in-out" :class="displayHorses.red? 'opacity-0' : ''">
+            <img src="../../assets/images/horseScale/horse_orange.png" class="inline max-w-[50px] absolute left-[50px] transition-opacity duration-500 ease-in-out" :class="displayHorses.orange? '' : 'opacity-0'">
+            <img src="../../assets/images/horseScale/horse_orange_grey.png" class="inline max-w-[50px] absolute left-[50px] transition-opacity duration-500 ease-in-out" :class="displayHorses.orange? 'opacity-0' : ''">
+            <img src="../../assets/images/horseScale/horse_yellow.png" class="inline max-w-[50px] absolute left-[100px] transition-opacity duration-500 ease-in-out" :class="displayHorses.yellow? '' : 'opacity-0'">
+            <img src="../../assets/images/horseScale/horse_yellow_grey.png" class="inline max-w-[50px] absolute left-[100px] transition-opacity duration-500 ease-in-out" :class="displayHorses.yellow? 'opacity-0' : ''">
+            <img src="../../assets/images/horseScale/horse_green.png" class="inline max-w-[50px] absolute left-[150px] transition-opacity duration-500 ease-in-out" :class="displayHorses.green? '' : 'opacity-0'">
+            <img src="../../assets/images/horseScale/horse_green_grey.png" class="inline max-w-[50px] absolute left-[150px] transition-opacity duration-500 ease-in-out" :class="displayHorses.green? 'opacity-0' : ''">
+            <img src="../../assets/images/horseScale/horse_darkgreen.png" class="inline max-w-[50px] absolute left-[200px] transition-opacity duration-500 ease-in-out" :class="displayHorses.darkgreen? '' : 'opacity-0'">
+            <img src="../../assets/images/horseScale/horse_darkgreen_grey.png" class="inline max-w-[50px] absolute left-[200px] transition-opacity duration-500 ease-in-out" :class="displayHorses.darkgreen? 'opacity-0' : ''">
 
 
           </div>
+          <div class="h-10">
           <p v-if="zxcvbnObject" class="font-light text-red-700 peer-invalid:visible">
 
           <span>{{ zxcvbnObject.feedback.warning? zxcvbnObject.feedback.warning + '.' : ''}}</span>
@@ -65,7 +71,7 @@
 
         </span>
           </p>
-
+          </div>
         </div>
       </main>
     </template>
@@ -92,7 +98,7 @@ export default {
 			value: '',
 			inputFocused: false,
 			horseSources: [],
-			renderHorses: {
+			displayHorses: {
 				darkgreen: false,
 				green: false,
 				yellow: false,
@@ -121,23 +127,23 @@ export default {
 			this.inputFocused = false;
 		},
 		getScore() {
-			Object.keys(this.renderHorses).forEach(horse => this.renderHorses[horse] = false);
+			Object.keys(this.displayHorses).forEach(horse => this.displayHorses[horse] = false);
 
 
 			if (this.score >= 0) {
-				this.renderHorses.red = true;
+				this.displayHorses.red = true;
 			}
 			if (this.score >= 1) {
-				this.renderHorses.orange = true;
+				this.displayHorses.orange = true;
 			}
 			if (this.score >= 2) {
-				this.renderHorses.yellow = true;
+				this.displayHorses.yellow = true;
 			}
 			if (this.score >= 3){
-				this.renderHorses.green = true;
+				this.displayHorses.green = true;
 			}
 			if (this.score >= 4){
-				this.renderHorses.darkgreen = true;
+				this.displayHorses.darkgreen = true;
 			}
 
 			return;
