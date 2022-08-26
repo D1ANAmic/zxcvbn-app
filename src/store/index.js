@@ -50,6 +50,11 @@ export default new Vuex.Store({
 				pageNumber: 8,
 				name: 'Is Zxcvbn the solution to all our problems?',
 				path: '/conclusion'
+			},
+			{
+				pageNumber: 9,
+				name: 'How to keep your accounts secure',
+				path: '/recommendation'
 			}
 		]
 	},
