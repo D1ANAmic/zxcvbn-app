@@ -66,6 +66,7 @@
 <script>
 import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
+import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
 
 export default {
 	components: {
@@ -76,6 +77,12 @@ export default {
 		return {
 			value: ''
 		};
+	},
+	methods: {
+		initializeMathJaxQueue
+	},
+	mounted() {
+		this.initializeMathJaxQueue(this);
 	}
 
 };
