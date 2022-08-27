@@ -33,13 +33,13 @@
           <Button :text="'Submit'" :handle-click="handlePasswordValidation">
           </Button>
           <p class="font-light text-red-700 peer-invalid:visible">
-            {{ errorMessage }}
+            {{ errorMessage }}&nbsp;
           </p>
         </div>
         <Paragraph
           :paragraph="'Doesn\'t this make you want to give up? Well, you’re not alone. Most of these password policies are not only very inconvenient to follow but in addition they differ from website to website.'"
         />
-        <InnerCard></InnerCard>
+        <PasswordPoliciesCarousel/>
         <Paragraph
           :paragraph="'But why do we even need all these stupid policies to begin with?'"
         ></Paragraph>
@@ -51,16 +51,16 @@
 <script>
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
-import InnerCard from '@/components/cards/InnerCard';
 import Button from '@/components/button/Button';
 import { validatePassword } from '@/utils/validatePassword';
+import PasswordPoliciesCarousel from '@/components/carousel/PasswordPoliciesCarousel';
 
 export default {
 	components: {
 		PageCard,
 		Paragraph,
-		InnerCard,
-		Button
+		Button,
+		PasswordPoliciesCarousel
 	},
 	data() {
 		return {
