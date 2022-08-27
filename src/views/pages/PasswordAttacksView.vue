@@ -18,7 +18,7 @@
 
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
-import Carousel from '@/components/carousel/Carousel';
+import Carousel from '@/components/carousel/PasswordAttacksCarousel';
 
 export default {
 	components: {
