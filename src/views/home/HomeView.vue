@@ -26,14 +26,12 @@
 
 import Modal from '@/components/modal/Modal';
 import Button from '@/components/button/Button.vue';
-import ZxcvbnView from '@/views/home/ZxcvbnView';
 import { mapState } from 'vuex';
 
 export default {
 	components: {
 		Button,
-		Modal,
-		ZxcvbnView
+		Modal
 	},
 	props: {
 	},
