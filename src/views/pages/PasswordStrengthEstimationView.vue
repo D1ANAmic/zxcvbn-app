@@ -51,7 +51,7 @@
               ><br />
             </div>
             <div class="mb-3 mt-20 text-2xl text-red-900">
-              <Mathjax :formula="getEntropyCalculation" :safe="true" />
+              <Paragraph :paragraph="getEntropyCalculation"/>
             </div>
           </em>
         </div>
@@ -69,13 +69,12 @@
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import { mapState } from 'vuex';
-import Mathjax from '@/components/mathjax/Mathjax';
+import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
 
 export default {
 	components: {
 		PageCard,
-		Paragraph,
-		Mathjax
+		Paragraph
 	},
 	data() {
 		return {
@@ -117,16 +116,18 @@ export default {
         '$'
 			);
 		}
-
 	},
 	watch: {
 		slider(value) {
 			this.$store.commit('SET_PASSWORD_SLIDER_LENGTH', value);
+			this.initializeMathJaxQueue(this);
 		}
 	},
 	methods: {
+		initializeMathJaxQueue,
 		handleChecked(range) {
 			this.passwordRange = range;
+			this.initializeMathJaxQueue(this);
 		},
 		calculateEntropy(range, length) {
 			return (Math.round( Math.log2(Math.pow(range, length)) * 100 ) / 100);
@@ -134,6 +135,9 @@ export default {
 		calculateAverageGuesses(range, length) {
 			return (Math.pow(range, length) / 2);
 		}
+	},
+	mounted() {
+		this.initializeMathJaxQueue(this);
 	}
 };
 </script>
