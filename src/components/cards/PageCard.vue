@@ -1,8 +1,9 @@
 <template>
-  <div
-    class="m-auto flex h-80vh w-80vw flex-row flex-nowrap rounded-3xl bg-primary pr-3 font-openSans text-font-dark text-left drop-shadow-2xl"
-  >
+  <CardBackground>
+    <template #menu>
     <Menu />
+    </template>
+    <template #card-content>
     <div class="flex h-full basis-3/4 flex-col overflow-y-auto p-10">
       <header>
         <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight">
@@ -12,15 +13,18 @@
       <slot></slot>
       <Pagination />
     </div>
-  </div>
+    </template>
+  </CardBackground>
 </template>
 
 <script>
+import CardBackground from '@/components/cards/CardBackground';
 import Menu from '@/components/menu/Menu';
 import Pagination from '@/components/pagination/Pagination';
 
 export default {
 	components: {
+		CardBackground,
 		Menu,
 		Pagination
 	},
