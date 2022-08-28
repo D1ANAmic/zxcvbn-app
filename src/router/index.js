@@ -40,6 +40,14 @@ const routes = [
 		component: () => import(/* webpackChunkName: "password-strength-estimation" */ '@/views/pages/PasswordStrengthEstimationView')
 	},
 	{
+		path: '/cracking-time-calculation',
+		name: 'Time to crack a password',
+		// route level code-splitting
+		// this generates a separate chunk (about.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () => import(/* webpackChunkName: "cracking-time-calculation" */ '@/views/pages/CrackingTimeCalculationView')
+	},
+	{
 		path: '/zxcvbn',
 		name: 'What is Zxcvbn?',
 		// route level code-splitting

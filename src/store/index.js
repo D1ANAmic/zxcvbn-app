@@ -9,6 +9,8 @@ export default new Vuex.Store({
 		modalOpen: false,
 		zxcvbnObject: null,
 		passwordSliderLength: '8',
+		passwordEntropy: '1',
+		numberOfGPUs: '1',
 		currentPage: 1,
 		// maybe populate it with the routes later? only possible if all routes are only pages that should be displayed in the menu
 		pages: [
@@ -29,31 +31,36 @@ export default new Vuex.Store({
 			},
 			{
 				pageNumber: 4,
+				name: 'Time to crack a password',
+				path: '/cracking-time-calculation'
+			},
+			{
+				pageNumber: 5,
 				name: 'What is zxcvbn?',
 				path: '/zxcvbn'
 			},
 			{
-				pageNumber: 5,
+				pageNumber: 6,
 				name: 'Matching: Finding all the patterns',
 				path: '/matching'
 			},
 			{
-				pageNumber: 6,
+				pageNumber: 7,
 				name: 'Estimating: How many guesses per match?',
 				path: '/estimating'
 			},
 			{
-				pageNumber: 7,
+				pageNumber: 8,
 				name: 'Searching: Calculating the overall guesses',
 				path: '/searching'
 			},
 			{
-				pageNumber: 8,
+				pageNumber: 9,
 				name: 'Is Zxcvbn the solution to all our problems?',
 				path: '/conclusion'
 			},
 			{
-				pageNumber: 9,
+				pageNumber: 10,
 				name: 'How to keep your accounts secure',
 				path: '/recommendation'
 			}
@@ -74,6 +81,12 @@ export default new Vuex.Store({
 		},
 		SET_PASSWORD_SLIDER_LENGTH(state, length) {
 			state.passwordSliderLength = length;
+		},
+		SET_NUMBER_OF_GPUS(state, numberOfGPUs) {
+			state.numberOfGPUs = numberOfGPUs;
+		},
+		SET_PASSWORD_ENTROPY(state, passwordEntropy) {
+			state.passwordEntropy = passwordEntropy;
 		}
 	}
 });

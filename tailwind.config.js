@@ -13,7 +13,9 @@ module.exports = {
 				'secondary': '#146460',
 				'third': '#F1A864',
 				'font-dark': '#485258',
-				'font-light': '#fff'
+				'font-light': '#fff',
+				'highlight1': '#6f03f1',
+				'highlight2': '#cf5f1c'
 			},
 			backgroundImage: {
 				'app-background': 'url(\'./images/app-background2.jpg\')',
