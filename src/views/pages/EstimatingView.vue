@@ -5,6 +5,7 @@
         <Paragraph
             paragraph="The estimating phase is responsible for assigning the number of guesses to every match found in the previous phase. The calculations are complex and differ depending on the matched pattern. "
         ></Paragraph>
+        <Paragraph paragraph="It is worth mentioning though, that the calculations under the hood can be more complex at times and estimations can be rounded differently. A slight divergence between manually calculated estimates and Zxcvbn's estimates are likely to occur."></Paragraph>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Token</h2>
         <Paragraph paragraph="Tokens are matched based on their rank in any given dictionary. Every leet and uppercase character adds a factor to the guesses. If the capitalized letter is in a common place like the beginning or end of the word, the factor 2 is added. Every leet character also multiplies the amout of guesses by 2."></Paragraph>
         <em>
