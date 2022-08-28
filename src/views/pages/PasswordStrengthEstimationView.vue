@@ -12,7 +12,7 @@
           </em>
         </ul>
         <Paragraph
-          paragraph="Let's use the word $password$ which has a length $L$ of 8 within the range $N$ of 26 the word only consists of lowercase letters from the roman alphabet. That leaves us with a pool of $26⁸$ possible passwords.
+          paragraph="Let's use the word $password$ which has a length $L$ of $8$ within the range $N$ of $26$ the word only consists of lowercase letters from the roman alphabet. That leaves us with a pool of $26⁸$ possible passwords.
         These calculations can easily go out of human readable bounds given their exponential character. That's why the password strength is specified as entropy H with a unit of bits."
         />
         <Paragraph
@@ -21,7 +21,7 @@
         <div class="rounded bg-font-light p-10">
           <em>
             <div class="mb-8">
-              <label for="length" class="mb-2 block">Password length</label>
+              <label for="length" class="mb-2 block text-third">Password length: {{this.passwordSliderLength}}</label>
               <input
                 type="range"
                 min="1"
@@ -31,12 +31,13 @@
                 id="length"
                 v-model="slider"
               />
+              <span class="text-xl"></span>
             </div>
             <div
               v-for="(alphabet, _, index) in alphabets"
               :key="index"
               :id="alphabet"
-              class="tex2jax_ignore mb-2"
+              class="tex2jax_ignore mb-2 text-secondary"
             >
               <input
                 type="radio"
@@ -50,16 +51,16 @@
               <label :for="alphabet">{{ alphabet.label }}</label
               ><br />
             </div>
-            <div class="mb-3 mt-20 text-2xl text-red-900">
-              <Paragraph :paragraph="getEntropyCalculation"/>
+            <div class="mb-3 mt-20 text-red-900">
+              <Paragraph :paragraph="getEntropyCalculation" class="text-xl"/>
             </div>
           </em>
         </div>
-        <Paragraph paragraph="The recommended bits of entropy have changed over the time. If we have at least 50 bits, the password should have an average level of security. Statistically speaking, an attacker needs on average half of all possible character combinations in order to guess the password.$$g = \frac{N^L}{2}$$ "></Paragraph>
-        <Paragraph :paragraph="this.passwordGuessesString"></Paragraph>
+        <Paragraph :paragraph="'The recommended bits of entropy have changed over the time. If we have at least 50 bits, the password should have an average level of security. Statistically speaking, an attacker needs on average half of all possible character combinations in order to guess the password which can also be expressed as powers of two in relation to the entropy. ' + guessesFormula "></Paragraph>
+        <Paragraph :paragraph="'With that in mind, the word $P@ssw0rd!$ should be at least a decent candidate, right?'"></Paragraph>
         <Paragraph :paragraph="this.passwordEntropyString"></Paragraph>
-        <Paragraph paragraph="Unfortunately not. This very password ranks on rank 96 on the password list fasttrack.txt. So instead of $3 * 10^{17}$ guesses it wouldn't even take $100$ guesses for an attacker to figure out the password."></Paragraph>
-        <Paragraph paragraph="If we consider the fact, that modern attacks are executed with approximately $10^{10}$ guesses per second, we need to change our point of view."></Paragraph>
+        <Paragraph :paragraph="this.passwordGuessesString"></Paragraph>
+        <Paragraph paragraph="Unfortunately not. This very password ranks on rank $96$ on the password list fasttrack.txt. So instead of almost $300$ Quadrillion (<a href='https://en.wikipedia.org/wiki/Long_and_short_scales' target='_blank' class='underline'>short scale </a>) guesses it wouldn't even take $100$ guesses for an attacker to figure out the password."></Paragraph>
       </main>
     </template>
   </PageCard>
@@ -100,7 +101,8 @@ export default {
 				}
 			},
 			passwordRange: 26,
-			passwordGuessesString: 'With that in mind, the password $P@ssw0rd!$ should be at least a decent candidate, right? $$g = \\frac{95^9}{2} = ' + this.calculateAverageGuesses(95, 9) + '$$',
+			guessesFormula: '$$g = \\frac{N^L}{2} = 2^{H-1}$$',
+			passwordGuessesString: '$$g = \\frac{95^9}{2} = 2^{59-1} = 2^{58}$$',
 			passwordEntropyString: '$$H = log_{2}(95^9) = ' + this.calculateEntropy(95, 9) + '$$'
 		};
 	},
@@ -109,7 +111,7 @@ export default {
 		getEntropyCalculation() {
 
 			return (
-				'$H = log_{2}(' + this.passwordRange + '^{' +
+				'$H = log_{2}(\\class{text-secondary}{' + this.passwordRange + '}^\\class{text-third}{' +
         this.passwordSliderLength +
         '}) = ' +
         this.calculateEntropy(this.passwordRange, this.passwordSliderLength) +
