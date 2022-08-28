@@ -11,7 +11,7 @@ export default new Vuex.Store({
 		passwordSliderLength: '8',
 		passwordEntropy: '1',
 		numberOfGPUs: '1',
-		currentPage: 1,
+		currentPage: 0,
 		// maybe populate it with the routes later? only possible if all routes are only pages that should be displayed in the menu
 		pages: [
 			{
