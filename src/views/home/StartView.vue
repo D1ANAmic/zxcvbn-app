@@ -37,15 +37,20 @@ export default {
 			catImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/VAN_CAT.png'
 		};
 	},
+	methods: {
+		resetPageNumber() {
+			this.$store.commit('SET_CURRENT_PAGE', 1);
+		}
+	},
 	computed: {
 		...mapState([
 			'modalOpen'
 		])
+
+
 	},
-	methods: {
-		closeModal(){
-			this.$store.commit('SET_MODAL_OPEN', false);
-		}
+	mounted() {
+		this.resetPageNumber();
 	}
 };
 </script>
