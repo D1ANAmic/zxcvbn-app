@@ -1,10 +1,10 @@
 <template>
   <CardBackground>
-    <template #menu>
+<!--    <template #menu>
     <Menu />
-    </template>
+    </template>-->
     <template #card-content>
-    <div class="flex h-full basis-3/4 flex-col overflow-y-auto p-10">
+    <div class="flex h-full basis-3/4 flex-col">
       <header>
         <h1 class="mt-0 mb-2 text-5xl font-medium leading-tight">
           {{ header }}
@@ -25,7 +25,7 @@ import Pagination from '@/components/pagination/Pagination';
 export default {
 	components: {
 		CardBackground,
-		Menu,
+		/*Menu,*/
 		Pagination
 	},
 	props: {

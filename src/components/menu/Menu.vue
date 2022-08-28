@@ -3,7 +3,10 @@
   <div class="h-full basis-1/4 rounded-l-3xl bg-secondary p-10 pl-15 text-left text-third">
     <div class="h-full flex flex-col justify-center">
       <ul class="h-1/2 flex flex-col justify-evenly m-auto ">
-        <li v-for="page in pages" :key="page.name" class="rounded p-2 cursor-pointer" :class="{'font-extrabold bg-font-light bg-opacity-30': page.name === getCurrentPageName}"><a @click="getPageLink(page)" @keyup.enter="getPageLink(page)">{{ page.name }}</a></li>
+        <li v-for="page in pages" :key="page.name" class="rounded p-2 cursor-pointer tracking-wide" :class="{' menu-active font-extrabold tracking-normal': page.name === getCurrentPageName}"
+          @click="getPageLink(page)" @keyup.enter="getPageLink(page)">
+          <a>{{ page.name }}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -36,3 +39,11 @@ export default {
 	}
 };
 </script>
+
+
+<style lang="scss">
+.menu-active {
+  text-shadow: 0 0 10px;
+}
+
+</style>
