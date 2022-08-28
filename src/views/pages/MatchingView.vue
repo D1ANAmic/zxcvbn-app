@@ -2,7 +2,8 @@
   <PageCard :header="'Matching: Finding all the patterns'">
     <template>
       <main>
-        <Paragraph paragraph="During the matching phase, a set of all possible (overlapping) patterns the password contains of is collected. The algorithm recognizes seven distinctive patterns."></Paragraph>
+        <Paragraph paragraph="The matching process is based on the idea of emulating a real life attack. An attacker would try out certain patterns that have been proven to be common in password composition in order to crack a password."/>
+        <Paragraph paragraph="During the matching phase, a set of all possible patterns that can be detected in the password are collected. Patterns may also overlap. The algorithm recognizes seven distinctive patterns."></Paragraph>
         <div class="mb-20">
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Token</h2>
         <Paragraph paragraph="The token matching tries to find a given password in one or more dictionaries by iterating over the wordlist. Uppercase letters and <a href='https://en.wikipedia.org/wiki/Leet' target='_blank' class='underline'>leetspeak</a> are transformed into the lowercase representation of the string beforehand."></Paragraph>
