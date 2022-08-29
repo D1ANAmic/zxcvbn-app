@@ -3,7 +3,7 @@
     <template>
       <main>
         <Paragraph
-          :paragraph="'Don\'t we all dread the following scenario: In order to use any kind of online service these days, it\'s inevitable to create an account first. While in theory this procedure sounds like just a short inconvenience, in reality most of the time is spent on finding a suitable password that complies with the website\'s password policy.'"
+          :paragraph="'Don\'t we all dread this well known scenario: In order to use any kind of online service these days, it\'s inevitable to create an account first. While in theory this procedure sounds like just a short inconvenience, in reality most of the time is spent on finding a suitable password that complies with the website\'s password policy.'"
         />
         <div class="mb-4 mt-5">
           <div
@@ -30,19 +30,18 @@
               v-model="value"
             />
           </div>
-          <Button :text="'Submit'" :handle-click="handlePasswordValidation">
-          </Button>
-          <p class="font-light text-red-700 peer-invalid:visible">
+          <Button :text="'Submit'" :handle-click="handlePasswordValidation"/>
+          <p class="font-light text-red-700 peer-invalid:visible font-[500]">
             {{ errorMessage }}&nbsp;
           </p>
         </div>
         <Paragraph
-          :paragraph="'Doesn\'t this make you want to give up? Well, you’re not alone. Most of these password policies are not only very inconvenient to follow but in addition they differ from website to website.'"
+          :paragraph="'Most of these password policies are not only very inconvenient, they also differ from website to website.'"
         />
         <PasswordPoliciesCarousel/>
         <Paragraph
-          :paragraph="'But why do we even need all these stupid policies to begin with?'"
-        ></Paragraph>
+          :paragraph="'But why do we even need all these annoying policies to begin with?'"
+        />
       </main>
     </template>
   </PageCard>
@@ -52,8 +51,8 @@
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import Button from '@/components/button/Button';
-import { validatePassword } from '@/utils/validatePassword';
 import PasswordPoliciesCarousel from '@/components/carousel/PasswordPoliciesCarousel';
+import { validatePassword } from '@/utils/validatePassword';
 
 export default {
 	components: {
@@ -68,11 +67,6 @@ export default {
 			errorMessage: '',
 			inputFocused: false
 		};
-	},
-	watch: {
-		value() {
-			/*	this.errorMessage = this.validatePassword(this.value, this.$refs.input);*/
-		}
 	},
 	methods: {
 		validatePassword,
