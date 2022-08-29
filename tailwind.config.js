@@ -5,20 +5,22 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				openSans: '\'Open Sans\', sans-serif'
+				openSans: '\'Open Sans\', sans-serif',
+				prozaLibre: '\'Proza Libre\', sans-serif'
 
 			},
 			colors: {
 				'primary': '#e1f396',
 				'secondary': '#146460',
-				'third': '#F1A864',
+				/*'third': '#F1A864',*/
+				'third': '#a26353',
 				'font-dark': '#485258',
 				'font-light': '#fff',
-				'highlight1': '#6f03f1',
+				'highlight1': '#7515a1',
 				'highlight2': '#cf5f1c'
 			},
 			backgroundImage: {
-				'app-background': 'url(\'./images/app-background2.jpg\')',
+				'app-background': 'url(\'./images/app-background7.jpg\')',
 				/*carousel images*/
 				'bruteforce': 'url(\'./images/passwordAttacks/brute_force.png\')',
 				'keylogger': 'url(\'./images/passwordAttacks/keylogger.png\')',
