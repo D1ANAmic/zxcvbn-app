@@ -4,7 +4,7 @@
 const isMathJaxInWindowObject = () => 'MathJax' in window;
 
 export const initializeMathJaxQueue = (ref) => {
-	if (! isMathJaxInWindowObject) {
+	if (!isMathJaxInWindowObject) {
 		return;
 	}
 	ref.$nextTick(() => {
