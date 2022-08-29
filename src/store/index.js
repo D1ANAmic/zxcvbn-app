@@ -8,11 +8,10 @@ export default new Vuex.Store({
 	state: {
 		modalOpen: false,
 		zxcvbnObject: null,
-		passwordSliderLength: '8',
+		passwordLength: '8',
 		passwordEntropy: '1',
 		numberOfGPUs: '1',
 		currentPage: 0,
-		// maybe populate it with the routes later? only possible if all routes are only pages that should be displayed in the menu
 		pages: [
 			{
 				pageNumber: 1,
@@ -26,12 +25,12 @@ export default new Vuex.Store({
 			},
 			{
 				pageNumber: 3,
-				name: 'How password strength is calculated',
+				name: 'How password strength is estimated',
 				path: '/password-strength-estimation'
 			},
 			{
 				pageNumber: 4,
-				name: 'Time to crack a password',
+				name: 'How long does it take to crack a password?',
 				path: '/cracking-time-calculation'
 			},
 			{
@@ -66,9 +65,11 @@ export default new Vuex.Store({
 			}
 		]
 	},
-	plugins: [createPersistedState({
-		paths: ['currentPage']
-	})],
+	plugins: [
+		createPersistedState({
+			paths: ['currentPage']
+		})
+	],
 	mutations: {
 		SET_MODAL_OPEN(state, isModalOpen) {
 			state.modalOpen = isModalOpen;
@@ -79,8 +80,8 @@ export default new Vuex.Store({
 		SET_CURRENT_PAGE(state, number) {
 			state.currentPage = number;
 		},
-		SET_PASSWORD_SLIDER_LENGTH(state, length) {
-			state.passwordSliderLength = length;
+		SET_PASSWORD_LENGTH(state, length) {
+			state.passwordLength = length;
 		},
 		SET_NUMBER_OF_GPUS(state, numberOfGPUs) {
 			state.numberOfGPUs = numberOfGPUs;
