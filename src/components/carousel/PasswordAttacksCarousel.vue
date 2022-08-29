@@ -10,7 +10,6 @@
         :id="`carousel-item-${index}`"
         data-carousel-item="active"
         class="absolute top-1/2 left-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-font-light transition-opacity duration-1000 ease-in-out"
-        alt="..."
         :class="index !== getCurrentElement ? 'opacity-0' : 'opacity-1'"
       >
         <div
@@ -30,7 +29,7 @@
       class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3"
     >
       <div
-        v-for="(item, index) in carouselItems"
+        v-for="(_, index) in carouselItems"
         :key="index"
         :id="`carousel-indicator-${index}`"
         class="h-3 w-3 cursor-pointer rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50"
@@ -38,30 +37,32 @@
       ></div>
     </div>
     <!-- Slider controls -->
-    <button
-      @click="onPrev()"
+    <Button
+      :handle-click="onPrev"
       id="data-carousel-prev"
-      type="button"
-      class="absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
+      :classes="'absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
     >
-      <span
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
-      >
-        <i class="fa-solid fa-chevron-left text-dark"></i>
-      </span>
-    </button>
-    <button
-      @click="onNext()"
+      <template #icon>
+        <span
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+        >
+          <i class="fa-solid fa-chevron-left text-dark"></i>
+        </span>
+      </template>
+    </Button>
+    <Button
+      :handle-click="onNext"
       id="data-carousel-next"
-      type="button"
-      class="absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
+      :classes="'absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
     >
-      <span
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
-      >
-        <i class="fa-solid fa-chevron-right text-dark"></i>
-      </span>
-    </button>
+      <template #icon>
+        <span
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+        >
+          <i class="fa-solid fa-chevron-right text-dark"></i>
+        </span>
+      </template>
+    </Button>
   </div>
 </template>
 
@@ -70,7 +71,7 @@ import Button from '@/components/button/Button';
 
 export default {
 	components: {
-		/*Button*/
+		Button
 	},
 	data() {
 		return {
@@ -127,8 +128,6 @@ export default {
 
 				return;
 			}
-			//const currentEl = document.getElementById(`carousel-item-${ this.currentElement }`);
-			//console.log('next slider item is shown: ', currentEl, 'Data: ', currentEl.dataset.carouselItem);
 			this.currentElement += 1;
 		},
 		onPrev() {
@@ -141,7 +140,6 @@ export default {
 		},
 		setCurrentSlide(index) {
 			this.currentElement = index;
-			console.log(index);
 		}
 	}
 };
