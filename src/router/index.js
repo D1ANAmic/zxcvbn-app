@@ -1,8 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeView from '@/views/home/HomeView';
-import PasswordPoliciesView from '@/views/pages/PasswordPoliciesView';
-import AttackerTypesView from '@/views/pages/PasswordAttacksView';
 
 Vue.use(VueRouter);
 
@@ -13,89 +10,83 @@ const routes = [
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "start" */ '@/views/home/StartView')
+		component: () =>
+			import(/* webpackChunkName: "start" */ '@/views/home/StartView')
 	},
 	{
 		path: '/password-policies',
 		name: 'Sign up please',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "password-policies" */ '@/views/pages/PasswordPoliciesView')
+		component: () =>
+			import(
+				/* webpackChunkName: "password-policies" */ '@/views/pages/PasswordPoliciesView'
+			)
 	},
 	{
 		path: '/password-attacks',
 		name: 'How attackers steal your password',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "password-attacks" */ '@/views/pages/PasswordAttacksView')
+		component: () =>
+			import(
+				/* webpackChunkName: "password-attacks" */ '@/views/pages/PasswordAttacksView'
+			)
 	},
 	{
 		path: '/password-strength-estimation',
 		name: 'How password strength is calculated',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "password-strength-estimation" */ '@/views/pages/PasswordStrengthEstimationView')
+		component: () =>
+			import(
+				/* webpackChunkName: "password-strength-estimation" */ '@/views/pages/PasswordStrengthEstimationView'
+			)
 	},
 	{
 		path: '/cracking-time-calculation',
-		name: 'Time to crack a password',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "cracking-time-calculation" */ '@/views/pages/CrackingTimeCalculationView')
+		name: 'How long does it take to crack a password?',
+		component: () =>
+			import(
+				/* webpackChunkName: "cracking-time-calculation" */ '@/views/pages/CrackingTimeCalculationView'
+			)
 	},
 	{
 		path: '/zxcvbn',
 		name: 'What is Zxcvbn?',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "zxcvbn" */ '@/views/pages/ZxcvbnView')
+		component: () =>
+			import(/* webpackChunkName: "zxcvbn" */ '@/views/pages/ZxcvbnView')
 	},
 	{
 		path: '/matching',
 		name: 'Matching: Finding all the patterns',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "matching" */ '@/views/pages/MatchingView')
+		component: () =>
+			import(/* webpackChunkName: "matching" */ '@/views/pages/MatchingView')
 	},
 	{
 		path: '/estimating',
 		name: 'Estimating: How many guesses per match?',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "estimating" */ '@/views/pages/EstimatingView')
+		component: () =>
+			import(
+				/* webpackChunkName: "estimating" */ '@/views/pages/EstimatingView'
+			)
 	},
 	{
 		path: '/searching',
 		name: 'Searching: Calculating the overall guesses',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "searching" */ '@/views/pages/SearchingView')
+		component: () =>
+			import(/* webpackChunkName: "searching" */ '@/views/pages/SearchingView')
 	},
 	{
 		path: '/conclusion',
 		name: 'Is Zxcvbn the solution to all our problems?',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "conclusion" */ '@/views/pages/ConclusionView')
+		component: () =>
+			import(
+				/* webpackChunkName: "conclusion" */ '@/views/pages/ConclusionView'
+			)
 	},
 	{
 		path: '/recommendation',
 		name: 'How to keep your accounts secure',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "recommendation" */ '@/views/pages/RecommendationView')
+		component: () =>
+			import(
+				/* webpackChunkName: "recommendation" */ '@/views/pages/RecommendationView'
+			)
 	}
-
 ];
 
 const router = new VueRouter({
@@ -103,4 +94,3 @@ const router = new VueRouter({
 });
 
 export default router;
-
