@@ -17,7 +17,12 @@ module.exports = {
 				'font-dark': '#485258',
 				'font-light': '#fff',
 				'highlight1': '#7515a1',
-				'highlight2': '#cf5f1c'
+				'highlight2': '#cf5f1c',
+				'score0': '#c8492f',
+				'score1': '#f49721',
+				'score2': '#f2d23b',
+				'score3': '#91c948',
+				'score4': '#008766'
 			},
 			backgroundImage: {
 				'app-background': 'url(\'./images/app-background7.jpg\')',
