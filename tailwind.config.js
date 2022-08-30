@@ -18,6 +18,7 @@ module.exports = {
 				'font-light': '#fff',
 				'highlight1': '#7515a1',
 				'highlight2': '#cf5f1c',
+				'text-area-highlight': '#f7ece3',
 				'score0': '#c8492f',
 				'score1': '#f49721',
 				'score2': '#f2d23b',
