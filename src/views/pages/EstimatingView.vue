@@ -14,14 +14,14 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">Shad0w</span>
+            <span class="text-xl text-third">Shad0w</span>
           </div>
           <ul class="ml-5 mb-10 list-disc">
             <li>shadow is the 17th word in the list</li>
             <li>the first letter is capitalized</li>
             <li>the 5th letter is in l33tspeak</li>
           </ul>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = 17 \cdot 2 \cdot 2 = 68$</span>
           </div>
         </div>
@@ -31,14 +31,14 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">864</span>
+            <span class="text-xl text-third">864</span>
           </div>
           <ul class="ml-5 mb-10 list-disc">
             <li>first symbol is a digit</li>
             <li>string length is 3</li>
             <li>unicode delta is -2</li>
           </ul>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = 10 \cdot 3 \cdot |-2| = 60$</span>
           </div>
         </div>
@@ -49,7 +49,7 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">abbabb</span>
+            <span class="text-xl text-third">abbabb</span>
           </div>
           <ul class="ml-5 mb-10 list-disc">
             <li>
@@ -58,7 +58,7 @@
             </li>
             <li>string contains 2 repetitions</li>
           </ul>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = 1000 \cdot 2 = 2000$</span>
           </div>
         </div>
@@ -75,9 +75,9 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">xcvghui</span>
+            <span class="text-xl text-third">xcvghui</span>
           </div>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = 5632457$</span>
           </div>
         </div>
@@ -87,7 +87,7 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">211596</span>
+            <span class="text-xl text-third">211596</span>
           </div>
           <ul class="ml-5 mb-10 list-disc">
             <li>
@@ -96,7 +96,7 @@
             </li>
             <li>in 2022 the delta from 1596 adds up to 93 years</li>
           </ul>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = 93 \cdot 365 = 12775$</span>
           </div>
         </div>
@@ -111,7 +111,7 @@
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
-            <span class="text-third text-xl">Kröte</span>
+            <span class="text-xl text-third">Kröte</span>
           </div>
           <ul class="ml-5 mb-10 list-disc">
             <li>
@@ -126,7 +126,7 @@
             <span>$$g = \frac{N^L}{2} =\frac{30^5}{2} = 10255574,5$$</span>
             <li>Zxcvbn however obtains a way lower guessing count</li>
           </ul>
-          <div class="text-third text-xl">
+          <div class="text-xl text-third">
             <span>$g = {10^5} = 100000 $</span>
           </div>
         </div>

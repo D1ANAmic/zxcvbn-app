@@ -2,12 +2,16 @@
   <PageCard :header="'What is Zxcvbn?'">
     <template>
       <main>
-        <Paragraph :paragraph="'Zxcvbn is a password strength estimator developed by <a href=\'https://blog.dropbox.com/authors/dan-wheeler\' target=\'_blank\' class=\'underline\'>Dan Wheeler</a>. It is built on the same concepts attackers use and utilizes them into rules for password strength estimation.'"/>
-        <Paragraph :paragraph="'The small Zxcvbn library can easily be embedded and will calculate the number of guesses, time to crack and the overall password score for a given password based on certain patterns.'"/>
-        <Paragraph :paragraph="'See for yourself:'"/>
+        <Paragraph
+          :paragraph="'Zxcvbn is a password strength estimator developed by <a href=\'https://blog.dropbox.com/authors/dan-wheeler\' target=\'_blank\' class=\'underline\'>Dan Wheeler</a>. It is built on the same concepts attackers use and utilizes them into rules for password strength estimation.'"
+        />
+        <Paragraph
+          :paragraph="'The small Zxcvbn library can easily be embedded and will calculate the number of guesses, time to crack and the overall password score for a given password based on certain patterns.'"
+        />
+        <Paragraph :paragraph="'See for yourself:'" />
         <div>
           <div class="mb-4 mt-5">
-<!--            <label
+            <!--            <label
               class="mb-2 block text-sm font-bold text-gray-700"
               for="password"
             >
@@ -25,15 +29,19 @@
             <PasswordResults :zxcvbnObject="zxcvbnObject" />
           </div>
         </div>
-        <Paragraph :paragraph="'Fair enough. But how does Zxcvbn actually work? The algorithm can be divided in three essential parts:'"/>
+        <Paragraph
+          :paragraph="'Fair enough. But how does Zxcvbn actually work? The algorithm can be divided in three essential parts:'"
+        />
         <em>
-        <ul class="list-disc pl-10">
-          <li>Matching</li>
-          <li>Estimating</li>
-          <li>Searching</li>
-        </ul>
+          <ul class="list-disc pl-10">
+            <li>Matching</li>
+            <li>Estimating</li>
+            <li>Searching</li>
+          </ul>
         </em>
-        <Paragraph :paragraph="'Let\'s explore them in the following sections.'"/>
+        <Paragraph
+          :paragraph="'Let\'s explore them in the following sections.'"
+        />
       </main>
     </template>
   </PageCard>

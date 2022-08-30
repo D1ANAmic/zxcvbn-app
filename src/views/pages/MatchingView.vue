@@ -15,7 +15,9 @@
           />
 
           <div class="flex flex-col items-center">
-            <div class="rounded bg-font-light p-10 min-w-full max-w-full italic">
+            <div
+              class="min-w-full max-w-full rounded bg-font-light p-10 italic"
+            >
               <div class="relative mb-20">
                 <span
                   id="token"
@@ -62,11 +64,15 @@
             :paragraph="'The sequence matching is based on the unicode representation of a symbol. The algorithm determines if a sequence is present according to the delta between two adjacent symbols.'"
           />
           <div class="flex flex-col items-center">
-            <div class="rounded bg-font-light p-10 min-w-full max-w-full italic">
+            <div
+              class="min-w-full max-w-full rounded bg-font-light p-10 italic"
+            >
               <div class="relative mb-10">
-                <span id="sequence" class="top-0 text-xl block">123s864</span>
+                <span id="sequence" class="top-0 block text-xl">123s864</span>
               </div>
-              <table class="w-2/3 text-left text-xs md:text-sm lg:text-base text-center">
+              <table
+                class="w-2/3 text-left text-center text-xs md:text-sm lg:text-base"
+              >
                 <tbody>
                   <tr class="border-b dark:border-font-dark">
                     <td class="linear sequence1 transition duration-500">1</td>
@@ -86,7 +92,7 @@
                     <td class="linear sequence4 transition duration-500">4</td>
                   </tr>
                   <tr class="text-[10px] md:text-xs xl:text-base">
-                    <td class="linear sequence1 transition duration-500 ">
+                    <td class="linear sequence1 transition duration-500">
                       U+0031
                     </td>
                     <td
@@ -122,19 +128,19 @@
               </table>
             </div>
 
-          <Button
-              class="w-1/4 mt-5"
-            :handle-click="handleSequenceAnimationButton"
-            :is-disabled="animationButtons.sequenceAnimationRunning"
-          >
-            <template #icon>
-              <span
-                v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
-              ></span>
-              <span class="hidden sm:inline"> Play</span>
-            </template>
-          </Button>
-        </div>
+            <Button
+              class="mt-5 w-1/4"
+              :handle-click="handleSequenceAnimationButton"
+              :is-disabled="animationButtons.sequenceAnimationRunning"
+            >
+              <template #icon>
+                <span
+                  v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
+                ></span>
+                <span class="hidden sm:inline"> Play</span>
+              </template>
+            </Button>
+          </div>
         </div>
 
         <div class="mb-20">
@@ -143,9 +149,11 @@
             :paragraph="'The repeat matcher searches for symbol repetitions through regular expressions. The longest match will always be prioritized.'"
           />
           <div class="flex flex-col items-center">
-            <div class="rounded bg-font-light p-10 min-w-full max-w-full italic">
+            <div
+              class="min-w-full max-w-full rounded bg-font-light p-10 italic"
+            >
               <div class="relative mb-10">
-                <span id="repeatWord" class="top-0 text-xl block">abbabb</span>
+                <span id="repeatWord" class="top-0 block text-xl">abbabb</span>
               </div>
               <div>
                 <span id="repeat1" class="repeat">a </span>
@@ -156,19 +164,19 @@
                 <span id="repeat6" class="repeat">b</span>
               </div>
             </div>
-          <Button
-              class="w-1/4 mt-5"
-            :handle-click="handleRepeatAnimationButton"
-            :is-disabled="animationButtons.repeatAnimationRunning"
-          >
-            <template #icon>
-              <span
-                v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
-              ></span>
-              <span class="hidden sm:inline"> Play</span>
-            </template>
-          </Button>
-        </div>
+            <Button
+              class="mt-5 w-1/4"
+              :handle-click="handleRepeatAnimationButton"
+              :is-disabled="animationButtons.repeatAnimationRunning"
+            >
+              <template #icon>
+                <span
+                  v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
+                ></span>
+                <span class="hidden sm:inline"> Play</span>
+              </template>
+            </Button>
+          </div>
         </div>
 
         <div class="mb-20">
@@ -177,27 +185,29 @@
             :paragraph="'The keyboard matcher analyzes the password for keyboard patterns by keeping track of neighbouring keys. If the next key is adjacent to the previous one it will match. Zxcvbn supports different keyboard layouts per default. Additional ones can be added.'"
           />
           <div class="flex flex-col items-center">
-            <div class="rounded bg-font-light p-10 min-w-full max-w-full italic">
+            <div
+              class="min-w-full max-w-full rounded bg-font-light p-10 italic"
+            >
               <div class="relative mb-10">
                 <span class="top-0 block text-xl">xcvghui</span>
               </div>
               <div>
-                <Keyboard/>
+                <Keyboard />
               </div>
             </div>
-          <Button
-              class="w-1/4 mt-5"
-            :handle-click="handleKeyboardAnimationButton"
-            :is-disabled="animationButtons.keyboardAnimationRunning"
-          >
-            <template #icon>
-              <span
-                v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
-              ></span>
-              <span class="hidden sm:inline"> Play</span>
-            </template>
-          </Button>
-        </div>
+            <Button
+              class="mt-5 w-1/4"
+              :handle-click="handleKeyboardAnimationButton"
+              :is-disabled="animationButtons.keyboardAnimationRunning"
+            >
+              <template #icon>
+                <span
+                  v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
+                ></span>
+                <span class="hidden sm:inline"> Play</span>
+              </template>
+            </Button>
+          </div>
         </div>
 
         <div class="mb-20">
@@ -206,7 +216,7 @@
             :paragraph="'Numerical strings with 4 to 8 adjacent digits are being checked for date representations. To be identified as a date, the following requirements have to be met:'"
           />
           <em>
-            <ul class="list-disc ml-10 mb-10">
+            <ul class="ml-10 mb-10 list-disc">
               <li>The year is represented by 2 or 4 digits</li>
               <li>
                 The year cannot be in the middle of the date representation
@@ -220,9 +230,11 @@
             :paragraph="'If several valid dates are possible, the one closest to the current date ist chosen.'"
           />
           <div class="flex flex-col items-center">
-            <div class="rounded bg-font-light p-10 min-w-full max-w-full italic">
+            <div
+              class="min-w-full max-w-full rounded bg-font-light p-10 italic"
+            >
               <div class="relative mb-10">
-                <span id="date" class="top-0 text-xl block">211596</span>
+                <span id="date" class="top-0 block text-xl">211596</span>
               </div>
               <div>
                 <div class="linear inline transition duration-1000">
@@ -284,19 +296,19 @@
                 </div>
               </div>
             </div>
-          <Button
-              class="w-1/4 mt-5"
-            :handle-click="handleDateAnimationButton"
-            :is-disabled="animationButtons.dateAnimationRunning"
-          >
-            <template #icon>
-              <span
-                v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
-              ></span>
-              <span class="hidden sm:inline"> Play</span>
-            </template>
-          </Button>
-        </div>
+            <Button
+              class="mt-5 w-1/4"
+              :handle-click="handleDateAnimationButton"
+              :is-disabled="animationButtons.dateAnimationRunning"
+            >
+              <template #icon>
+                <span
+                  v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
+                ></span>
+                <span class="hidden sm:inline"> Play</span>
+              </template>
+            </Button>
+          </div>
         </div>
 
         <Paragraph

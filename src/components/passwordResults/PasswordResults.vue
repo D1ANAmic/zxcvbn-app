@@ -23,7 +23,7 @@
             </span>
           </td>
         </tr>
-        <tr class="border-b dark:border-font-dark font-bold">
+        <tr class="border-b font-bold dark:border-font-dark">
           <td>Crack times:</td>
           <td>
             <span class="block">
@@ -71,7 +71,10 @@
       :handle-click="toggleRawData"
     />
     <br />
-    <table v-if="isRawDataShown" class="mt-10 mb-10 w-2/3 text-left text-[11px] sm:text-sm lg:text-base">
+    <table
+      v-if="isRawDataShown"
+      class="mt-10 mb-10 w-2/3 text-left text-[11px] sm:text-sm lg:text-base"
+    >
       <tbody>
         <tr
           class="border-b dark:border-font-dark"

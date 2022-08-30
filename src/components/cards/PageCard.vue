@@ -2,16 +2,22 @@
   <CardBackground>
     <template #card-content>
       <div class="flex h-full basis-3/4 flex-col">
-        <Button :classes="'md:hidden z-50 fixed w-full top-0 right-0 py-1 bg-secondary transition-color duration-500 ease-in-out text-xl lg:hidden'" :class="isMobileMenuShown ? 'text-font-light' : 'text-primary'"
-        :handle-click="showMobileMenu">
+        <Button
+          :classes="'md:hidden z-50 fixed w-full top-0 right-0 py-1 bg-secondary transition-color duration-500 ease-in-out text-xl lg:hidden'"
+          :class="isMobileMenuShown ? 'text-font-light' : 'text-primary'"
+          :handle-click="showMobileMenu"
+        >
           <template #icon>
             <i class="fa-solid fa-bars"></i>
           </template>
         </Button>
-        <Menu class="fixed top-0 left-0 min-w-full  transition-transform duration-500 ease-in-out z-10 lg:hidden" :class="isMobileMenuShown ? 'translate-y-0' : '-translate-y-full'"/>
+        <Menu
+          class="fixed top-0 left-0 z-10 min-w-full transition-transform duration-500 ease-in-out lg:hidden"
+          :class="isMobileMenuShown ? 'translate-y-0' : '-translate-y-full'"
+        />
         <header>
           <h1
-            class=" mt-20 md:mt-0 mb-2 font-prozaLibre text-5xl font-bold leading-tight text-third"
+            class="mt-20 mb-2 font-prozaLibre text-5xl font-bold leading-tight text-third md:mt-0"
           >
             {{ header }}
           </h1>
@@ -39,13 +45,13 @@ export default {
 	props: {
 		header: { type: String, required: true }
 	},
-	data(){
+	data() {
 		return {
 			isMobileMenuShown: false
 		};
 	},
 	methods: {
-		showMobileMenu(){
+		showMobileMenu() {
 			console.log('caneil batty rank');
 			this.isMobileMenuShown = !this.isMobileMenuShown;
 		}

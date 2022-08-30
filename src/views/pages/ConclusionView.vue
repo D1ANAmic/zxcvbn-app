@@ -5,19 +5,18 @@
         <Paragraph
           :paragraph="'Zxcvbn may not be the one and only solution. But it efficiently shows one thing: The common approach to password composition does not provide us with more secure passwords. On the contrary. Policies, that prompt us to use a certain set of characters and length only result in three things:'"
         />
-        <ul class="list-disc ml-10 italic">
+        <ul class="ml-10 list-disc italic">
           <li>
             We're forced to integrate illogical characters in our password which
             makes it harder for the human brain to remember.
           </li>
           <li>
-            So we come up with l33tspeak replacements, use keyboard
-            patterns or sequences because we still want to be able to memorize
-            the password.
+            So we come up with l33tspeak replacements, use keyboard patterns or
+            sequences because we still want to be able to memorize the password.
           </li>
           <li>
-            This results in password compositions, which
-            are now equally guessable by attackers.
+            This results in password compositions, which are now equally
+            guessable by attackers.
           </li>
         </ul>
         <Paragraph
@@ -45,7 +44,8 @@
             <label
               class="absolute top-0 left-2 origin-left duration-300"
               :class="{
-                '-translate-y-6 scale-75 transform text-secondary': inputFocused
+                '-translate-y-6 scale-75 transform text-secondary':
+                  inputFocused,
               }"
               for="password-check"
             >
@@ -62,7 +62,7 @@
               v-model="value"
             />
           </div>
-          <Button :text="'Submit'" :handle-click="handleZxcvbnEstimation"/>
+          <Button :text="'Submit'" :handle-click="handleZxcvbnEstimation" />
           <div class="relative mb-10">
             <img
               src="../../assets/images/horseScale/horse_red.png"
@@ -118,7 +118,7 @@
           <div class="h-10">
             <div
               v-if="zxcvbnObject"
-              class="text-red-700 peer-invalid:visible font-[500]"
+              class="font-[500] text-red-700 peer-invalid:visible"
             >
               <span>{{
                 zxcvbnObject.feedback.warning

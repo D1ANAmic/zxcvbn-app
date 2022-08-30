@@ -2,10 +2,13 @@
   <!--tex2jax_ignore prevents Mathjax from processing the whole document, processable regions are additionally indicated by tex2jax_process-->
   <div id="app" class="tex2jax_ignore flex h-screen bg-app-background bg-cover">
     <div
-      class="m-auto h-full w-full flex max-w-[1084px] flex-row flex-nowrap rounded border-third bg-primary text-left font-openSans text-font-dark shadow-2xl lg:h-80vh lg:w-80vw lg:border-2 lg:drop-shadow-2xl"
+      class="m-auto flex h-full w-full max-w-[1084px] flex-row flex-nowrap rounded border-third bg-primary text-left font-openSans text-font-dark shadow-2xl lg:h-80vh lg:w-80vw lg:border-2 lg:drop-shadow-2xl"
     >
       <Menu v-if="!isStartPage" class="hidden md:block" />
-      <div class="overflow-x-hidden p-6 sm:p-20 lg:p-10 lg:ml-auto" :class="isStartPage ? 'flex' : 'md:ml-[30%] '">
+      <div
+        class="overflow-x-hidden p-6 sm:p-20 lg:ml-auto lg:p-10"
+        :class="isStartPage ? 'flex' : 'md:ml-[30%] '"
+      >
         <transition name="fade" mode="out-in">
           <router-view />
         </transition>

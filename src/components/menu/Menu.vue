@@ -1,20 +1,25 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div
-    class="pl-15 md:py-20 overflow-y-auto flex flex-col md:min-w-[30%] fixed h-screen lg:h-auto lg:relative md:max-w-[30%] basis-1/2 bg-secondary p-5 lg:p-10 text-left font-prozaLibre text-font-light text-sm xl:text-base"
+    class="pl-15 fixed flex h-screen basis-1/2 flex-col overflow-y-auto bg-secondary p-5 text-left font-prozaLibre text-sm text-font-light md:min-w-[30%] md:max-w-[30%] md:py-20 lg:relative lg:h-auto lg:p-10 xl:text-base"
   >
-    <div class="flex flex-col justify-center m-auto">
+    <div class="m-auto flex flex-col justify-center">
       <ul class="m-auto flex h-1/2 flex-col justify-evenly">
-        <li class="cursor-pointer rounded p-2 tracking-wide mb-10"
-            @click="goToStart()"> <i class="fa-solid fa-house text-xl mr-2"/>Start</li>
+        <li
+          class="mb-10 cursor-pointer rounded p-2 tracking-wide"
+          @click="goToStart()"
+        >
+          <i class="fa-solid fa-house mr-2 text-xl" />Start
+        </li>
         <li
           v-for="(page, index) in pages"
           :key="page.name"
           :index="index"
           class="cursor-pointer rounded p-2 tracking-wide"
           :class="{
-            ' menu-active font-extrabold tracking-normal':
-              isActivePage(page.name),
+            ' menu-active font-extrabold tracking-normal': isActivePage(
+              page.name
+            ),
           }"
           @click="getPageLink(page)"
           @keyup.enter="getPageLink(page)"
@@ -37,7 +42,7 @@ export default {
 		}
 	},
 	methods: {
-		isActivePage(name){
+		isActivePage(name) {
 			return this.getCurrentPageName === name;
 		},
 		getPageLink(page) {
@@ -48,7 +53,7 @@ export default {
 			this.$store.commit('SET_CURRENT_PAGE', pageNumber);
 			this.$router.push(path);
 		},
-		goToStart(){
+		goToStart() {
 			this.$router.push('/');
 		}
 	}

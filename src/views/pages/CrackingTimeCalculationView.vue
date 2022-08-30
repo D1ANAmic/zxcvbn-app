@@ -8,7 +8,9 @@
         <Paragraph
           :paragraph="'Modern GPUs can execute approximately $10$ billion (<a href=\'https://en.wikipedia.org/wiki/Long_and_short_scales\' target=\'_blank\' class=\'underline\'>short scale</a>) guesses per second. If we take that into consideration, we can easily predict the time to guess depending on a given entropy.'"
         />
-        <Paragraph :paragraph="'Based on the current average cost to rent a GPU that achieves $10$ billion guesses per second ($30$ ct / h), we can then also predict the average overall cost $c$ depending on the entropy and the number of utilized GPUs.'"/>
+        <Paragraph
+          :paragraph="'Based on the current average cost to rent a GPU that achieves $10$ billion guesses per second ($30$ ct / h), we can then also predict the average overall cost $c$ depending on the entropy and the number of utilized GPUs.'"
+        />
 
         <div class="rounded bg-font-light p-10">
           <div class="mb-8">
@@ -44,13 +46,34 @@
             />
           </div>
           <div class="mb-3 mt-20">
-            <Paragraph :paragraph="'<span class=\'text-xl sm:text-2xl inline-block mb-2\'>'+getTimeToCrackFormula+'</span> <span class=\'text-base sm:text-xl inline-block\'>'+getTimeToCrackResult+'</span>'"/>
-            <Paragraph :paragraph="'$c =\\text{ }'+ calculateAverageCosts() + '\\small{\\text{ \\$}}$'" class="text-base sm:text-xl"/>
+            <Paragraph
+              :paragraph="
+                '<span class=\'text-xl sm:text-2xl inline-block mb-2\'>' +
+                getTimeToCrackFormula +
+                '</span> <span class=\'text-base sm:text-xl inline-block\'>' +
+                getTimeToCrackResult +
+                '</span>'
+              "
+            />
+            <Paragraph
+              :paragraph="
+                '$c =\\text{ }' +
+                calculateAverageCosts() +
+                '\\small{\\text{ \\$}}$'
+              "
+              class="text-base sm:text-xl"
+            />
           </div>
-          <span class="text-xs">M = 1 Million, B = 1 Billion, T = 1 Trillion, Q = 1 Quadrillion (according to the short scale)</span><br>
-          <span class="text-xs">Cracking times above 13,8B years are categorized as "longer than the universe exists".</span>
+          <span class="text-xs"
+            >M = 1 Million, B = 1 Billion, T = 1 Trillion, Q = 1 Quadrillion
+            (according to the short scale)</span
+          ><br />
+          <span class="text-xs"
+            >Cracking times above 13,8B years are categorized as "longer than
+            the universe exists".</span
+          >
         </div>
-        <PowersOfTwoToPowersOfTenConverter/>
+        <PowersOfTwoToPowersOfTenConverter />
         <Paragraph
           :paragraph="'With that in mind, let\'s look at the word <em>P@ssw0rd!</em>. With an entropy of $58$ bits it should take an attacker with a single GPU approximately $167$ days to crack. Sounds like a decent password, right?'"
         />
@@ -90,13 +113,12 @@ export default {
 	},
 	data() {
 		return {
-
 			passwordEntropyString:
         '$$H = log_{2}(95^9) = ' + this.calculateEntropy(95, 9) + '$$',
 			passwordGuessesString: '$$g = \\frac{95^9}{2} = 2^{59-1} = 2^{58}$$',
 			crackingTimeString:
         '$$t = \\frac{2^{58}}{10 \\text{B}} = 167 \\text{ d}$$',
-			averageCostPerGPUPerHour: .3
+			averageCostPerGPUPerHour: 0.3
 		};
 	},
 	computed: {
@@ -110,7 +132,7 @@ export default {
         '} \\cdot 10\\text{B}} = $'
 			);
 		},
-		getTimeToCrackResult(){
+		getTimeToCrackResult() {
 			return '$\\text{ }' + this.getTimeToCrackFormatted() + '$';
 		}
 	},
@@ -139,69 +161,65 @@ export default {
 			);
 			this.initializeMathJaxQueue(this);
 		},
-		getTimeToCrack(){
+		getTimeToCrack() {
 			return this.calculateGuessesNeeded() / this.getTotalGuessesPerSecond();
 		},
 		getTimeToCrackFormatted() {
 			const time = this.getTimeToCrack();
 
-
 			if (time > SECONDS_PER_YEAR) {
 				const years = time / SECONDS_PER_YEAR;
-				if ( years > YEARS_UNIVERSE_EXISTS) {
+				if (years > YEARS_UNIVERSE_EXISTS) {
 					return '\\text{longer than the universe exists}';
 				}
 
-				return (this.displayAsNumeral(years) + '\\text{ y }');
+				return this.displayAsNumeral(years) + '\\text{ y }';
 			}
 			if (time > SECONDS_PER_DAY) {
-				return (Math.round(time / SECONDS_PER_DAY) + '\\text{ d }');
+				return Math.round(time / SECONDS_PER_DAY) + '\\text{ d }';
 			}
 			if (time > SECONDS_PER_HOUR) {
-				return (Math.round(time / SECONDS_PER_HOUR) + ' \\text{ h }');
+				return Math.round(time / SECONDS_PER_HOUR) + ' \\text{ h }';
 			}
 			if (time > SECONDS_PER_MINUTE) {
-				return (Math.round(time / SECONDS_PER_MINUTE) + ' \\text{ min }');
+				return Math.round(time / SECONDS_PER_MINUTE) + ' \\text{ min }';
 			}
 			if (time < SECONDS_PER_MILLISECOND) {
-				return (' \\text{< 1 ms}');
+				return ' \\text{< 1 ms}';
 			}
 			if (time < 1) {
-				return (Math.round(time / SECONDS_PER_MILLISECOND) + ' \\text{ ms }');
+				return Math.round(time / SECONDS_PER_MILLISECOND) + ' \\text{ ms }';
 			}
 
-			return (Math.round(time) + '\\text{ s }');
-
+			return Math.round(time) + '\\text{ s }';
 		},
-		displayAsNumeral(number){
-			if (number < 1e6){
-				return Math.round((number) * 100) / 100;
+		displayAsNumeral(number) {
+			if (number < 1e6) {
+				return Math.round(number * 100) / 100;
 			}
-			if (number < 1e9){
-				return (Math.round((number / 1e6) * 100) / 100) + '\\text{M}';
+			if (number < 1e9) {
+				return Math.round((number / 1e6) * 100) / 100 + '\\text{M}';
 			}
-			if (number < 1e12){
-				return (Math.round((number / 1e9) * 100) / 100) + '\\text{B}';
+			if (number < 1e12) {
+				return Math.round((number / 1e9) * 100) / 100 + '\\text{B}';
 			}
-			if (number < 1e15){
-				return (Math.round((number / 1e12) * 100) / 100) + '\\text{T}';
+			if (number < 1e15) {
+				return Math.round((number / 1e12) * 100) / 100 + '\\text{T}';
 			}
-			if (number < 1e18){
-				return (Math.round(number / 1e15) * 100 / 100) + '\\text{Q}';
+			if (number < 1e18) {
+				return (Math.round(number / 1e15) * 100) / 100 + '\\text{Q}';
 			}
 
 			return '> 1\\text{ quadrillion}';
 		},
 		displayAsPowerOfTen(number) {
 			if (number < 1000000) {
-
-				return Math.round((number) * 100) / 100;
-
+				return Math.round(number * 100) / 100;
 			}
 			const pot = Math.floor(Math.log10(number));
 			console.log(number);
 			console.log(pot);
-			const result = `10^{${ pot }}`;
+			const result = `10^{${pot}}`;
 
 			return result;
 		},
@@ -215,7 +233,9 @@ export default {
 			}
 			console.log(hours);
 
-			return this.displayAsNumeral(hours * this.averageCostPerGPUPerHour * this.numberOfGPUs);
+			return this.displayAsNumeral(
+				hours * this.averageCostPerGPUPerHour * this.numberOfGPUs
+			);
 		}
 	},
 	mounted() {

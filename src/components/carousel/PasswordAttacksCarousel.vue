@@ -16,7 +16,9 @@
           class="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-10"
           :class="item.bgImage"
         ></div>
-        <div class="p-10 md:p-20 lg:p-50 m-auto flex h-full items-center text-center text-xs md:text-md lg:text-[.9rem] lg:leading-[1.3] xl:text-base">
+        <div
+          class="lg:p-50 md:text-md m-auto flex h-full items-center p-10 text-center text-xs md:p-20 lg:text-[.9rem] lg:leading-[1.3] xl:text-base"
+        >
           <div>
             <h2 class="mb-3 text-2xl font-extrabold">{{ item.headline }}</h2>
             <p>{{ item.paragraph }}</p>
@@ -44,7 +46,7 @@
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
         >
           <i class="fa-solid fa-chevron-left text-dark"></i>
         </span>
@@ -57,7 +59,7 @@
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
         >
           <i class="fa-solid fa-chevron-right text-dark"></i>
         </span>
