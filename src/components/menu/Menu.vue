@@ -1,9 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div
-    class="pl-15 min-w-[30%] fixed h-screen lg:h-auto lg:relative max-w-[30%] basis-1/2 bg-secondary p-5 lg: p-10 text-left font-prozaLibre text-font-light text-sm xl:text-base"
+    class="pl-15 md:py-20 overflow-y-auto flex flex-col min-w-[30%] fixed h-screen lg:h-auto lg:relative max-w-[30%] basis-1/2 bg-secondary p-5 lg:p-10 text-left font-prozaLibre text-font-light text-sm xl:text-base"
   >
-    <div class="flex h-full flex-col justify-center">
+    <div class="flex flex-col justify-center m-auto">
       <ul class="m-auto flex h-1/2 flex-col justify-evenly">
         <li
           v-for="(page, index) in pages"
