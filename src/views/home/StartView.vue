@@ -7,15 +7,19 @@
         <div class="flex">
           <img
             src="../../assets/images/hero3.svg"
-            class="min-w-[35%] max-w-[35%] basis-1"
+            class="min-w-[35%] max-w-[35%] basis-1 hidden md:block"
           />
-          <h1 class="m-auto ml-[-20px] font-prozaLibre text-6xl font-extrabold">
+          <h1 class="m-auto text-center text-third md:text-left md:ml-[-20px] font-prozaLibre text-4xl md:text-5xl lg:text-6xl font-extrabold">
             Password Strength with Zxcvbn for Dummies
           </h1>
         </div>
+        <img
+            src="../../assets/images/hero3.svg"
+            class="min-w-[35%] max-w-[35%] basis-1 hidden sm:block md:hidden"
+        />
         <Paragraph
           :paragraph="'Have you always wanted to know what determines a strong password? Or are you simply fed up with overly complex password policies? Then your\'re at the right place. This interactive app will provide you with the tools to compose strong passwords. '"
-          :class="'text-center text-xl '"
+          :class="'text-center sm:text-xl '"
         ></Paragraph>
         <div>
           <router-link to="/password-policies"

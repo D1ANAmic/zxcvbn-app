@@ -31,7 +31,7 @@
             />
           </div>
           <Button :text="'Submit'" :handle-click="handlePasswordValidation"/>
-          <p class="font-light text-red-700 peer-invalid:visible font-[500]">
+          <p class="text-red-700 peer-invalid:visible font-[500]">
             {{ errorMessage }}&nbsp;
           </p>
         </div>

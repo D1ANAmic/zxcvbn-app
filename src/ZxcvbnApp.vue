@@ -1,14 +1,16 @@
 <template>
-<!--tex2jax_ignore prevents Mathjax from processing the whole document, processable regions are additionally indicated by tex2jax_process-->
-  <div id="app" class="flex h-screen bg-app-background bg-cover tex2jax_ignore">
-   <div class="m-auto flex h-80vh w-80vw max-w-[1084px] flex-row flex-nowrap rounded shadow-2xl bg-primary pr-3 font-openSans text-font-dark text-left drop-shadow-2xl border-2 border-third" >
-    <Menu v-if="!isStartPage"/>
-    <div class="overflow-x-hidden p-20">
-      <transition  name="fade" mode="out-in">
-      <router-view/>
-      </transition>
+  <!--tex2jax_ignore prevents Mathjax from processing the whole document, processable regions are additionally indicated by tex2jax_process-->
+  <div id="app" class="tex2jax_ignore flex h-screen bg-app-background bg-cover">
+    <div
+      class="m-auto h-full w-full flex max-w-[1084px] flex-row flex-nowrap rounded border-third bg-primary text-left font-openSans text-font-dark shadow-2xl lg:h-80vh lg:w-80vw lg:border-2 lg:drop-shadow-2xl"
+    >
+      <Menu v-if="!isStartPage" class="hidden md:block" />
+      <div class="overflow-x-hidden p-6 sm:p-20 lg:p-10 lg:ml-auto" :class="isStartPage ? 'flex' : 'md:ml-[30%] '">
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </div>
     </div>
-   </div>
   </div>
 </template>
 
@@ -16,30 +18,26 @@
 import Menu from '@/components/menu/Menu';
 import { mapState } from 'vuex';
 export default {
-	components:{
+	components: {
 		//StartView,
 		Menu
 	},
-	computed:{
+	computed: {
 		...mapState(['currentPage']),
 		isStartPage() {
 			return this.currentPage === 0;
 		}
 	}
 };
-
 </script>
-
 
 <style lang="scss">
 .fade-leave-active {
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-
 }
-
 </style>

@@ -118,7 +118,7 @@
           <div class="h-10">
             <div
               v-if="zxcvbnObject"
-              class="font-light text-red-700 peer-invalid:visible"
+              class="text-red-700 peer-invalid:visible font-[500]"
             >
               <span>{{
                 zxcvbnObject.feedback.warning

@@ -12,7 +12,7 @@
                 <span class="text-highlight1">Shad0w</span>
                 <span class="text-secondary">211596</span>
               </div>
-              <ul class="text-xl">
+              <ul class="text-base sm:text-xl">
                 <span class="text-highlight2">$g = 60$</span>&nbsp;
                 <span class="text-highlight1">$g = 68$</span>&nbsp;
                 <span class="text-secondary">$g = 155490$</span>
@@ -68,7 +68,7 @@
         />
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div>
-            <div class="relative mb-5 text-xl">
+            <div class="relative mb-5 text-md xl:text-xl">
               <table class="w-full">
                 <tr class="leading-10">
                   <td>

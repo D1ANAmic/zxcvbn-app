@@ -31,11 +31,11 @@
     <Button
         :handle-click="onPrev"
         id="data-carousel-prev"
-        :classes="'absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
+        :classes="'absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-1 md:px-4'"
     >
       <template #icon>
         <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
         >
           <i class="fa-solid fa-chevron-left text-dark"></i>
         </span>
@@ -44,11 +44,11 @@
     <Button
         :handle-click="onNext"
         id="data-carousel-next"
-        :classes="'absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
+        :classes="'absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-1 md:px-4'"
     >
       <template #icon>
         <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
         >
           <i class="fa-solid fa-chevron-right text-dark"></i>
         </span>

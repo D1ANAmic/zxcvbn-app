@@ -42,7 +42,7 @@
             />
           </div>
           <div class="mb-3 mt-20">
-            <Paragraph :paragraph="getTimeToCrackFormula" class="text-3xl" />
+            <Paragraph :paragraph="getTimeToCrackFormula" class="text-xl sm:text-3xl" />
           </div>
         </div>
         <Paragraph

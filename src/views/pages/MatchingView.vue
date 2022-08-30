@@ -50,7 +50,7 @@
                 <span
                   v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
                 ></span>
-                <span> Play</span>
+                <span class="hidden sm:inline"> Play</span>
               </template>
             </Button>
           </div>
@@ -66,7 +66,7 @@
               <div class="relative mb-10">
                 <span id="sequence" class="top-0 text-xl block">123s864</span>
               </div>
-              <table class="w-2/3 text-left text-center">
+              <table class="w-2/3 text-left text-xs md:text-sm lg:text-base text-center">
                 <tbody>
                   <tr class="border-b dark:border-font-dark">
                     <td class="linear sequence1 transition duration-500">1</td>
@@ -85,8 +85,8 @@
                     </td>
                     <td class="linear sequence4 transition duration-500">4</td>
                   </tr>
-                  <tr>
-                    <td class="linear sequence1 transition duration-500">
+                  <tr class="text-[10px] md:text-xs xl:text-base">
+                    <td class="linear sequence1 transition duration-500 ">
                       U+0031
                     </td>
                     <td
@@ -131,7 +131,7 @@
               <span
                 v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
               ></span>
-              <span> Play</span>
+              <span class="hidden sm:inline"> Play</span>
             </template>
           </Button>
         </div>
@@ -165,7 +165,7 @@
               <span
                 v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
               ></span>
-              <span> Play</span>
+              <span class="hidden sm:inline"> Play</span>
             </template>
           </Button>
         </div>
@@ -194,7 +194,7 @@
               <span
                 v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
               ></span>
-              <span> Play</span>
+              <span class="hidden sm:inline"> Play</span>
             </template>
           </Button>
         </div>
@@ -293,7 +293,7 @@
               <span
                 v-html="`<i class=&quot;fa-solid fa-play&quot;></i>`"
               ></span>
-              <span> Play</span>
+              <span class="hidden sm:inline"> Play</span>
             </template>
           </Button>
         </div>

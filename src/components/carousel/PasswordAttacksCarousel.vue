@@ -16,7 +16,7 @@
           class="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-10"
           :class="item.bgImage"
         ></div>
-        <div class="p-50 m-auto flex h-full items-center p-32 text-center">
+        <div class="p-10 md:p-20 lg:p-50 m-auto flex h-full items-center text-center text-xs md:text-md lg:text-[.9rem] lg:leading-[1.3] xl:text-base">
           <div>
             <h2 class="mb-3 text-2xl font-extrabold">{{ item.headline }}</h2>
             <p>{{ item.paragraph }}</p>
@@ -40,11 +40,11 @@
     <Button
       :handle-click="onPrev"
       id="data-carousel-prev"
-      :classes="'absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
+      :classes="'absolute top-0 left-0 z-30 flex h-full cursor-pointer items-center justify-center px-1 md:px-4'"
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
         >
           <i class="fa-solid fa-chevron-left text-dark"></i>
         </span>
@@ -53,11 +53,11 @@
     <Button
       :handle-click="onNext"
       id="data-carousel-next"
-      :classes="'absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-4'"
+      :classes="'absolute top-0 right-0 z-30 flex h-full cursor-pointer items-center justify-center px-1 md:px-4'"
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full md:bg-font-dark md:bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary"
         >
           <i class="fa-solid fa-chevron-right text-dark"></i>
         </span>

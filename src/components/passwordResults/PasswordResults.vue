@@ -71,7 +71,7 @@
       :handle-click="toggleRawData"
     />
     <br />
-    <table v-if="isRawDataShown" class="mt-10 mb-10 w-2/3 text-left">
+    <table v-if="isRawDataShown" class="mt-10 mb-10 w-2/3 text-left text-[11px] sm:text-sm lg:text-base">
       <tbody>
         <tr
           class="border-b dark:border-font-dark"
