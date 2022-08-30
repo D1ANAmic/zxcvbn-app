@@ -5,6 +5,8 @@
   >
     <div class="flex flex-col justify-center m-auto">
       <ul class="m-auto flex h-1/2 flex-col justify-evenly">
+        <li class="cursor-pointer rounded p-2 tracking-wide mb-10"
+            @click="goToStart()"> <i class="fa-solid fa-house text-xl mr-2"/>Start</li>
         <li
           v-for="(page, index) in pages"
           :key="page.name"
@@ -45,6 +47,9 @@ export default {
 			}
 			this.$store.commit('SET_CURRENT_PAGE', pageNumber);
 			this.$router.push(path);
+		},
+		goToStart(){
+			this.$router.push('/');
 		}
 	}
 };
