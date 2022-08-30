@@ -2,7 +2,7 @@
   <CardBackground>
     <template #start>
       <div
-        class="flex h-full w-full flex-col items-center justify-center overflow-hidden p-5 text-xl"
+        class="flex h-full sm:h-auto w-full flex-col items-center justify-center overflow-y-auto p-5 text-xl"
       >
         <div class="flex">
           <img
