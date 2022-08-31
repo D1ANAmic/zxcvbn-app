@@ -19,7 +19,7 @@
         <h3 class="text-xl font-medium leading-tight">Online Attacks</h3>
         <Paragraph
           class="mb-[2rem] mt-[2rem]"
-          :paragraph="'The target of online attacks is primarily the login interface of a website. Here the attacker would try a number of username and password combinations in order to gain access. Telltale password composition rules can hereby help to narrow down the possible passwords. Online attacks are limited by the network speed on the one hand. One the other hand, most applications have a alert system that will block the account after a certain number of failed login attemps. Therefore online guessing attacks are basically limited and can be mitigated.'"
+          :paragraph="'The target of online attacks is primarily the login interface of a website. Here the attacker would try a number of username and password combinations in order to gain access. Telltale password composition rules can hereby help to narrow down the possible passwords. Online attacks are limited by the network speed on the one hand. On the other hand, most applications have an alert system that will block the account after a certain number of failed login attempts. Therefore online guessing attacks are basically limited and can be mitigated.'"
         />
         <h3 class="mb-[2rem] text-xl font-medium leading-tight">
           Offline Attacks
