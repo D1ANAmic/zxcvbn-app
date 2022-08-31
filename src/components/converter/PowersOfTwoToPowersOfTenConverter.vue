@@ -20,9 +20,13 @@
 
 <script>
 import Paragraph from '@/components/text/Paragraph';
+import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
 
 export default {
 	components: { Paragraph },
+	methods: {
+		initializeMathJaxQueue
+	},
 	mounted() {
 		this.initializeMathJaxQueue(this);
 	}
