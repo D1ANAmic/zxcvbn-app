@@ -217,8 +217,6 @@ export default {
 				return Math.round(number * 100) / 100;
 			}
 			const pot = Math.floor(Math.log10(number));
-			console.log(number);
-			console.log(pot);
 			const result = `10^{${pot}}`;
 
 			return result;
@@ -231,7 +229,6 @@ export default {
 			if (hours < 1) {
 				hours = 1;
 			}
-			console.log(hours);
 
 			return this.displayAsNumeral(
 				hours * this.averageCostPerGPUPerHour * this.numberOfGPUs

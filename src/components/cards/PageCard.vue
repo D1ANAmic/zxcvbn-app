@@ -52,7 +52,6 @@ export default {
 	},
 	methods: {
 		showMobileMenu() {
-			console.log('caneil batty rank');
 			this.isMobileMenuShown = !this.isMobileMenuShown;
 		}
 	}

@@ -51,8 +51,6 @@ export default {
 		handlePageIncrement() {
 			if (this.currentPage < this.totalPages) {
 				this.$store.commit('SET_CURRENT_PAGE', this.currentPage + 1);
-				console.log(this.currentPage);
-				console.log(this.totalPages);
 				this.$router.push(this.pages[this.currentPage - 1]['path']);
 			}
 		},
