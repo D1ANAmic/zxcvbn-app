@@ -118,6 +118,7 @@
 <script>
 import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
+import { scrollToTop } from '@/utils/scrollTopTop';
 import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
 
 export default {
@@ -127,6 +128,9 @@ export default {
 	},
 	methods: {
 		initializeMathJaxQueue
+	},
+	created() {
+		scrollToTop();
 	},
 	mounted() {
 		this.initializeMathJaxQueue(this);

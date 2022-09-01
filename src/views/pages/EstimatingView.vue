@@ -139,6 +139,7 @@
 import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
 import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
@@ -147,6 +148,9 @@ export default {
 	},
 	methods: {
 		initializeMathJaxQueue
+	},
+	created() {
+		scrollToTop();
 	},
 	mounted() {
 		this.initializeMathJaxQueue(this);

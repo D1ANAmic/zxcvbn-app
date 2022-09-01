@@ -37,12 +37,16 @@
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import Carousel from '@/components/carousel/PasswordAttacksCarousel';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
 		PageCard,
 		Paragraph,
 		Carousel
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

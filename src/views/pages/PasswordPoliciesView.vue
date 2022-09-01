@@ -54,6 +54,7 @@ import Paragraph from '@/components/text/Paragraph';
 import Button from '@/components/button/Button';
 import PasswordPoliciesCarousel from '@/components/carousel/PasswordPoliciesCarousel';
 import { validatePassword } from '@/utils/validatePassword';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
@@ -83,6 +84,9 @@ export default {
 			}
 			this.inputFocused = false;
 		}
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

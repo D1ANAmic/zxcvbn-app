@@ -141,11 +141,12 @@
 </template>
 
 <script>
+const zxcvbn = require('zxcvbn');
 import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
 import Button from '@/components/button/Button';
+import { scrollToTop } from '@/utils/scrollTopTop';
 import { mapState } from 'vuex';
-const zxcvbn = require('zxcvbn');
 
 export default {
 	components: {
@@ -209,6 +210,9 @@ export default {
 
 			return;
 		}
+	},
+	created() {
+		scrollToTop();
 	},
 	beforeDestroy() {
 		this.$store.commit('INIT_ZXCVBN_OBJECT', null);

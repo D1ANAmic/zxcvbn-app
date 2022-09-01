@@ -53,6 +53,7 @@ import Paragraph from '@/components/text/Paragraph';
 import PasswordResults from '@/components/passwordResults/PasswordResults';
 import PageCard from '@/components/cards/PageCard';
 import { mapState } from 'vuex';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
@@ -72,6 +73,9 @@ export default {
 	},
 	computed: {
 		...mapState(['zxcvbnObject'])
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

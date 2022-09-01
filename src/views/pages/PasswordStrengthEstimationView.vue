@@ -73,6 +73,7 @@ import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import { mapState } from 'vuex';
 import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
@@ -139,6 +140,9 @@ export default {
 	},
 	mounted() {
 		this.initializeMathJaxQueue(this);
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

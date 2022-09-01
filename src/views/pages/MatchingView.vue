@@ -324,6 +324,7 @@ import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
 import Button from '@/components/button/Button';
 import Keyboard from '@/components/keyboard/Keyboard';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
@@ -575,6 +576,9 @@ export default {
 			});
 			document.getElementById('matchedDate').classList.remove('bg-highlight2');
 		}
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

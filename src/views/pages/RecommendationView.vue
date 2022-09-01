@@ -26,11 +26,15 @@
 <script>
 import Paragraph from '@/components/text/Paragraph';
 import PageCard from '@/components/cards/PageCard';
+import { scrollToTop } from '@/utils/scrollTopTop';
 
 export default {
 	components: {
 		Paragraph,
 		PageCard
+	},
+	created() {
+		scrollToTop();
 	}
 };
 </script>

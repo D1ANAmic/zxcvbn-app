@@ -95,6 +95,7 @@
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
 import PowersOfTwoToPowersOfTenConverter from '@/components/converter/PowersOfTwoToPowersOfTenConverter';
+import { scrollToTop } from '@/utils/scrollTopTop';
 import { mapState } from 'vuex';
 import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
 
@@ -234,6 +235,9 @@ export default {
 				hours * this.averageCostPerGPUPerHour * this.numberOfGPUs
 			);
 		}
+	},
+	created() {
+		scrollToTop();
 	},
 	mounted() {
 		this.initializeMathJaxQueue(this);
