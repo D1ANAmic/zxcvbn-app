@@ -17,7 +17,7 @@
               >&nbsp;
               <span class="text-highlight1">$g = 68$</span
               >&nbsp;
-              <span class="text-secondary">$g = 155490$</span>
+              <span class="text-secondary">$g = 2^{17.2}$</span>
             </ul>
           </div>
         </div>
@@ -27,10 +27,10 @@
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div class="text-xl text-third">
             <div class="relative mb-10">
-              <span>$g_{total} = 60 \cdot 68 \cdot 155490 \cdot 3!$</span>
+              <span>$g_{total} = 60 \cdot 68 \cdot 2^{17.2} \cdot 3!$</span>
             </div>
             <div>
-              <span>$g_{total} = 2^{32}$</span>
+              <span>$g_{total} = 2^{31.8}$</span>
             </div>
           </div>
         </div>
@@ -46,13 +46,13 @@
               <span>Online attack with $10$ guesses per second:</span>
             </div>
             <div class="relative mb-10 text-xl text-third">
-              <span>$t = \frac{2^{32}}{10} = 12 \text{ y}$</span>
+              <span>$t = \frac{2^{31.8}}{10} = 12 \text{ y}$</span>
             </div>
             <div class="relative mb-5">
               <span>Offline attack with $10^{10}$ guesses per second:</span>
             </div>
             <div class="relative mb-10 text-xl text-third">
-              <span>$t = \frac{2^{32}}{10^{10}} = 300 \text{ ms}$</span>
+              <span>$t = \frac{2^{31.8}}{10^{10}} = 300 \text{ ms}$</span>
             </div>
           </div>
         </div>

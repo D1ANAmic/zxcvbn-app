@@ -78,7 +78,7 @@
             <span class="text-xl text-third">xcvghui</span>
           </div>
           <div class="text-xl text-third">
-            <span>$g = 5632457$</span>
+            <span>$g = 2^{22.4}$</span>
           </div>
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Date</h2>
@@ -97,7 +97,7 @@
             <li>in 2022 the delta from 1596 adds up to 93 years</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = 93 \cdot 365 = 12775$</span>
+            <span>$g = 93 \cdot 365 = 2^{13.6}$</span>
           </div>
         </div>
         <h2
@@ -123,11 +123,11 @@
               character pool based on the german alphabet which has 30 symbols
             </li>
 
-            <span>$$g = \frac{N^L}{2} =\frac{30^5}{2} = 10255574,5$$</span>
+            <span>$$g = \frac{N^L}{2} =\frac{30^5}{2} = 2^{23,5}$$</span>
             <li>Zxcvbn however obtains a way lower guessing count</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = {10^5} = 100000 $</span>
+            <span>$g = {10^5} = 2^{16,6} $</span>
           </div>
         </div>
       </main>
