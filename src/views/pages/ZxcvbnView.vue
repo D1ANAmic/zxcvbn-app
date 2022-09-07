@@ -11,12 +11,6 @@
         <Paragraph :paragraph="'See for yourself:'" />
         <div>
           <div class="mb-4 mt-5">
-            <!--            <label
-              class="mb-2 block text-sm font-bold text-gray-700"
-              for="password"
-            >
-              Password
-            </label>-->
             <input
               class="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
               id="password"
@@ -26,7 +20,7 @@
             />
           </div>
           <div v-if="zxcvbnObject">
-            <PasswordResults :zxcvbnObject="zxcvbnObject" />
+            <ZxcvbnResults :zxcvbnObject="zxcvbnObject" />
           </div>
         </div>
         <Paragraph
@@ -48,9 +42,10 @@
 </template>
 
 <script>
+
 const zxcvbn = require('zxcvbn');
 import Paragraph from '@/components/text/Paragraph';
-import PasswordResults from '@/components/passwordResults/PasswordResults';
+import ZxcvbnResults from '@/components/zxcvbnResults/ZxcvbnResults';
 import PageCard from '@/components/cards/PageCard';
 import { mapState } from 'vuex';
 import { scrollToTop } from '@/utils/scrollTopTop';
@@ -58,7 +53,7 @@ import { scrollToTop } from '@/utils/scrollTopTop';
 export default {
 	components: {
 		Paragraph,
-		PasswordResults,
+		ZxcvbnResults,
 		PageCard
 	},
 	data() {
