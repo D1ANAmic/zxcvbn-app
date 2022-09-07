@@ -55,13 +55,13 @@
               <span>Online attack with $10$ guesses per second:</span>
             </div>
             <div class="relative mb-10 text-xl text-third">
-              <span>$t = \frac{2^{31.8}}{10} = 12 \text{ y}$</span>
+              <span>$t_{crack} = \frac{2^{31.8}}{10} = 12 \text{ y}$</span>
             </div>
             <div class="relative mb-5">
               <span>Offline attack with $10^{10}$ guesses per second:</span>
             </div>
             <div class="relative mb-10 text-xl text-third">
-              <span>$t = \frac{2^{31.8}}{10^{10}} = 300 \text{ ms}$</span>
+              <span>$t_{crack} = \frac{2^{31.8}}{10^{10}} = 300 \text{ ms}$</span>
             </div>
           </div>
         </div>

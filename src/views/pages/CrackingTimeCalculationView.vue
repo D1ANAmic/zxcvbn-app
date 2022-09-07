@@ -4,7 +4,7 @@
       <main class="tex2jax_process">
         <Paragraph
           :paragraph="'Now that we know how many guesses an attacker needs to crack the password, we can derive the ' +
-           'time to crack $t$.'"
+           'time to crack $t_{crack}$.'"
         />
         <Paragraph
           :paragraph="'Modern GPUs can execute approximately $10$ billion ' +
@@ -71,7 +71,7 @@
             />
           </div>
           <span class="text-xs"
-            >M = 1 Million, B = 1 Billion, T = 1 Trillion, Q = 1 Quadrillion
+            >M = 1 million, B = 1 billion, T = 1 trillion, Q = 1 quadrillion
             (according to the short scale)</span
           ><br />
           <span class="text-xs"
@@ -91,7 +91,7 @@
         <Paragraph
           :paragraph="'Unfortunately not. This very password can be located at rank $96$ on the password list ' +
            '<em><a href=\'https://github.com/drtychai/wordlists/blob/master/fasttrack.txt\' target=\'_blank\' ' +
-            'class=\'underline\'>fasttrack.txt</a></em>. So instead of almost $300$ Quadrillion guesses it wouldn\'t ' +
+            'class=\'underline\'>fasttrack.txt</a></em>. So instead of almost $300$ quadrillion guesses it wouldn\'t ' +
              'even take $100$ guesses for an attacker to figure out the password.'"
         />
         <Paragraph
@@ -131,7 +131,7 @@ export default {
         '$$H = log_{2}(95^9) = ' + this.calculateEntropy(95, 9) + '$$',
 			passwordGuessesString: '$$g = \\frac{95^9}{2} = 2^{59-1} = 2^{58}$$',
 			crackingTimeString:
-        '$$t = \\frac{2^{58}}{10 \\text{B}} = 167 \\text{ d}$$',
+        '$$t_{crack} = \\frac{2^{58}}{10 \\text{B}} = 167 \\text{ d}$$',
 			averageCostPerGPUPerHour: 0.3
 		};
 	},
@@ -139,7 +139,7 @@ export default {
 		...mapState(['passwordEntropy', 'numberOfGPUs']),
 		getTimeToCrackFormula() {
 			return (
-				'$t = \\frac{' +
+				'$t_{crack} = \\frac{' +
         this.getPowerOfTwoFormula() +
         '}{\\class{text-highlight1}{' +
         this.numberOfGPUs +
