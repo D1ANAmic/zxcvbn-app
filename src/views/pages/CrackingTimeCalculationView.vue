@@ -94,7 +94,7 @@
 <script>
 import PageCard from '@/components/cards/PageCard';
 import Paragraph from '@/components/text/Paragraph';
-import PowersOfTwoToPowersOfTenConverter from '@/components/converter/PowersOfTwoToPowersOfTenConverter';
+import PowersOfTwoToPowersOfTenConverter from '@/components/converter/PowersOfTwoConversion';
 import { scrollToTop } from '@/utils/scrollTopTop';
 import { mapState } from 'vuex';
 import { initializeMathJaxQueue } from '@/utils/initializeMathJaxQueue';
