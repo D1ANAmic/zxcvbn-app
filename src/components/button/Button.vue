@@ -22,7 +22,8 @@ export default {
 	data() {
 		return {
 			defaultActiveButtonClasses:
-        'px-4 py-2 border-[1px] border-secondary bg-secondary text-font-light transition delay-75 duration-500 ease-in-out hover:bg-third uppercase',
+        'px-4 py-2 border-[1px] border-secondary bg-secondary text-font-light transition delay-75 duration-500 ' +
+          'ease-in-out hover:bg-third uppercase',
 			defaultDisabledButtonClasses:
         'px-4 py-2 border-[1px] border-secondary bg-secondary text-font-light opacity-50 uppercase'
 		};

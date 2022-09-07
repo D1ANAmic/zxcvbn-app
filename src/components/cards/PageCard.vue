@@ -3,7 +3,8 @@
     <template #card-content>
       <div class="flex h-full basis-3/4 flex-col">
         <Button
-          :classes="'md:hidden z-50 fixed w-full top-0 right-0 py-1 bg-secondary transition-color duration-500 ease-in-out text-xl lg:hidden'"
+          :classes="'md:hidden z-50 fixed w-full top-0 right-0 py-1 bg-secondary transition-color duration-500 ' +
+           'ease-in-out text-xl lg:hidden'"
           :class="isMobileMenuShown ? 'text-font-light' : 'text-primary'"
           :handle-click="showMobileMenu"
         >

@@ -10,7 +10,8 @@
             class="hidden min-w-[35%] max-w-[35%] basis-1 md:block"
           />
           <h1
-            class="m-auto text-center font-prozaLibre text-4xl font-extrabold text-third md:ml-[-20px] md:text-left md:text-5xl lg:text-6xl"
+            class="m-auto text-center font-prozaLibre text-4xl font-extrabold text-third md:ml-[-20px] md:text-left
+            md:text-5xl lg:text-6xl"
           >
             Password Strength with Zxcvbn for Dummies
           </h1>
@@ -20,7 +21,9 @@
           class="hidden min-w-[35%] max-w-[35%] basis-1 sm:block md:hidden"
         />
         <Paragraph
-          :paragraph="'Have you always wanted to know what determines a strong password? Or are you simply fed up with overly complex password policies? Then your\'re at the right place. This interactive app will provide you with the tools to compose strong passwords. '"
+          :paragraph="'Have you always wanted to know what determines a strong password? Or are you simply fed up ' +
+           'with overly complex password policies? Then your\'re at the right place. This interactive app will ' +
+            'provide you with the tools to compose strong passwords. '"
           :class="'text-center sm:text-xl '"
         ></Paragraph>
         <div>

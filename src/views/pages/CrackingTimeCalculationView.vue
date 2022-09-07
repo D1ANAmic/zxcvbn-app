@@ -3,13 +3,19 @@
     <template>
       <main class="tex2jax_process">
         <Paragraph
-          :paragraph="'Now that we know how many guesses an attacker needs to crack the password, we can derive the time to crack $t$.'"
+          :paragraph="'Now that we know how many guesses an attacker needs to crack the password, we can derive the ' +
+           'time to crack $t$.'"
         />
         <Paragraph
-          :paragraph="'Modern GPUs can execute approximately $10$ billion (<a href=\'https://en.wikipedia.org/wiki/Long_and_short_scales\' target=\'_blank\' class=\'underline\'>short scale</a>) guesses per second. If we take that into consideration, we can easily predict the time to guess depending on a given entropy.'"
+          :paragraph="'Modern GPUs can execute approximately $10$ billion ' +
+           '(<a href=\'https://en.wikipedia.org/wiki/Long_and_short_scales\' target=\'_blank\' class=\'underline\'>' +
+            'short scale</a>) guesses per second. If we take that into consideration, we can easily predict the time ' +
+             'to guess depending on a given entropy.'"
         />
         <Paragraph
-          :paragraph="'Based on the current average cost to rent a GPU that achieves $10$ billion guesses per second ($30$ ct / h), we can then also predict the average overall cost $c$ depending on the entropy and the number of utilized GPUs.'"
+          :paragraph="'Based on the current average cost to rent a GPU that achieves $10$ billion guesses per ' +
+           'second ($30$ ct / h), we can then also predict the average overall cost $c$ depending on the entropy ' +
+            'and the number of utilized GPUs.'"
         />
 
         <div class="rounded bg-font-light p-10">
@@ -75,16 +81,23 @@
         </div>
         <PowersOfTwoToPowersOfTenConverter />
         <Paragraph
-          :paragraph="'With that in mind, let\'s look at the word <em>P@ssw0rd!</em>. With an entropy of $58$ bits it should take an attacker with a single GPU approximately $167$ days to crack. Sounds like a decent password, right?'"
+          :paragraph="'With that in mind, let\'s look at the word <em>P@ssw0rd!</em>. With an entropy of $58$ bits ' +
+           'it should take an attacker with a single GPU approximately $167$ days to crack. Sounds like a decent ' +
+            'password, right?'"
         />
         <Paragraph :paragraph="this.passwordEntropyString" />
         <Paragraph :paragraph="this.passwordGuessesString" />
         <Paragraph :paragraph="this.crackingTimeString" />
         <Paragraph
-          :paragraph="'Unfortunately not. This very password can be located at rank $96$ on the password list <em><a href=\'https://github.com/drtychai/wordlists/blob/master/fasttrack.txt\' target=\'_blank\' class=\'underline\'>fasttrack.txt</a></em>. So instead of almost $300$ Quadrillion guesses it wouldn\'t even take $100$ guesses for an attacker to figure out the password.'"
+          :paragraph="'Unfortunately not. This very password can be located at rank $96$ on the password list ' +
+           '<em><a href=\'https://github.com/drtychai/wordlists/blob/master/fasttrack.txt\' target=\'_blank\' ' +
+            'class=\'underline\'>fasttrack.txt</a></em>. So instead of almost $300$ Quadrillion guesses it wouldn\'t ' +
+             'even take $100$ guesses for an attacker to figure out the password.'"
         />
         <Paragraph
-          :paragraph="'And here is the problem. Attackers have perfected their cracking process over the time. Every leaked password list provides information about human behaviour in regards to password composition. This knowledge can be transformed into efficient cracking patterns.'"
+          :paragraph="'And here is the problem. Attackers have perfected their cracking process over the time. Every ' +
+           'leaked password list provides information about human behaviour in regards to password composition. This ' +
+            'knowledge can be transformed into efficient cracking patterns.'"
         />
       </main>
     </template>

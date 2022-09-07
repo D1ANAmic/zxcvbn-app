@@ -3,14 +3,21 @@
     <template>
       <main class="tex2jax_process">
         <Paragraph
-          :paragraph="'The estimating phase is responsible for assigning the required number of guesses to every match found in the previous phase. The calculations are complex and differ depending on the matched pattern.'"
+          :paragraph="'The estimating phase is responsible for assigning the required number of guesses to every ' +
+           'match found in the previous phase. The calculations are complex and differ depending on the matched ' +
+            'pattern.'"
         />
         <Paragraph
-          :paragraph="'It is worth mentioning though, that the calculations under the hood can be more complex at times and estimations can be rounded differently. Therefore a slight divergence between manually calculated estimates and Zxcvbn results are likely to occur.'"
+          :paragraph="'It is worth mentioning though, that the calculations under the hood can be more complex at ' +
+           'times and estimations can be rounded differently. Therefore a slight divergence between manually ' +
+            'calculated estimates and Zxcvbn results are likely to occur.'"
         />
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Token</h2>
         <Paragraph
-          :paragraph="'Tokens are estimated based on their rank in any given dictionary. Every l33t and uppercase character adds a multiplier to the guesses count. If the capitalized letter is at a common place like the beginning or end of the word, the multiplier $2$ is added. Every l33t character also multiplies the amout of guesses by $2$.'"
+          :paragraph="'Tokens are estimated based on their rank in any given dictionary. Every l33t and uppercase ' +
+           'character adds a multiplier to the guesses count. If the capitalized letter is at a common place like ' +
+            'the beginning or end of the word, the multiplier $2$ is added. Every l33t character also multiplies ' +
+             'the amount of guesses by $2$.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
@@ -27,7 +34,9 @@
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Sequence</h2>
         <Paragraph
-          :paragraph="'Sequences are estimated based on their first characters. For most common symbols like $a$ and $1$, the base guesses are evaluated as $4$. Digits get a base value of $10$ and all other symbols $26$. The base is then multiplied with the string\'s length and the unicode delta between the elements.'"
+          :paragraph="'Sequences are estimated based on their first characters. For most common symbols like $a$ ' +
+           'and $1$, the base guesses are evaluated as $4$. Digits get a base value of $10$ and all other symbols ' +
+            '$26$. The base is then multiplied with the string\'s length and the unicode delta between the elements.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
@@ -45,7 +54,9 @@
 
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Repeat</h2>
         <Paragraph
-          :paragraph="'Repeats are guessed based on their rank in the dictionary and then multiplied by the number of repetitions. If the pattern can\'t be found in the dictionary, it\'s evaluated as a <a href=#bruteForce class=underline>bruteforce string</a>.'"
+          :paragraph="'Repeats are guessed based on their rank in the dictionary and then multiplied by the number ' +
+           'of repetitions. If the pattern can\'t be found in the dictionary, it\'s evaluated as a ' +
+            '<a href=#bruteForce class=underline>bruteforce string</a>.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
@@ -71,7 +82,8 @@
           <li>number of keys on the keyboard</li>
         </ul>
         <Paragraph
-          :paragraph="'The calculation is very complex. For our purposes it is sufficient to get the estimation value from Zxcvbn.'"
+          :paragraph="'The calculation is very complex. For our purposes it is sufficient to get the estimation ' +
+           'value from Zxcvbn.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
@@ -83,7 +95,8 @@
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Date</h2>
         <Paragraph
-          :paragraph="'As for the date estimation, the difference between the date\'s year to the current year is calculated. The delta is then multiplied by $365$ to reflect every possible date in the time span.'"
+          :paragraph="'As for the date estimation, the difference between the date\'s year to the current year ' +
+           'is calculated. The delta is then multiplied by $365$ to reflect every possible date in the time span.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">
@@ -107,7 +120,11 @@
           Brute Force
         </h2>
         <Paragraph
-          :paragraph="'Strings that don\'t fit any of the above patterns and are not contained in any wordlist are evaluated as random strings which can only be guessed by brute force. Zxcvbn doesn\'t calculate the guesses count based on the entropy $H = R^L$ because it has been proven to overestimate passwords, especially words in other languages that are not included in Zxcvbn\'s dictionaries. Therefore the guesses are based on a constant $C=10$ to the power of the length of the string.'"
+          :paragraph="'Strings that don\'t fit any of the above patterns and are not contained in any wordlist are ' +
+           'evaluated as random strings which can only be guessed by brute force. Zxcvbn doesn\'t calculate the ' +
+            'guesses count based on the entropy $H = R^L$ because it has been proven to overestimate passwords, e' +
+             'specially words in other languages that are not included in Zxcvbn\'s dictionaries. Therefore the ' +
+              'guesses are based on a constant $C=10$ to the power of the length of the string.'"
         />
         <div class="mb-20 rounded bg-font-light p-10 italic">
           <div class="relative mb-10">

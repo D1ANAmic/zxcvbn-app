@@ -3,7 +3,11 @@
     <template>
       <main class="tex2jax_process">
         <Paragraph
-          :paragraph="'During the searching phase the algorithm will determine a combination of non overlapping patterns that cover the whole password and also need the least amount of guesses in sum. With that said, Zxcvbn assumes that an attacker already knows which patterns the password consists of. This will result in a slight underestimation. However it could be proven to be sufficient especially for very short passwords as well as very complex ones.'"
+          :paragraph="'During the searching phase the algorithm will determine a combination of non overlapping ' +
+           'patterns that cover the whole password and also need the least amount of guesses in sum. With that said, ' +
+            'Zxcvbn assumes that an attacker already knows which patterns the password consists of. This will ' +
+             'result in a slight underestimation. However it could be proven to be sufficient especially for very ' +
+              'short passwords as well as very complex ones.'"
         />
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div>
@@ -22,7 +26,9 @@
           </div>
         </div>
         <Paragraph
-          :paragraph="'Now that we have calculated the guesses count of each pattern, we need to consider that the order is unknown to an attacker. Because of that they would have to try every possible combination. Therefore we need to calculate the permutation as the factorial of all three patterns.'"
+          :paragraph="'Now that we have calculated the guesses count of each pattern, we need to consider that the ' +
+           'order is unknown to an attacker. Because of that they would have to try every possible combination. ' +
+            'Therefore we need to calculate the permutation as the factorial of all three patterns.'"
         />
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div class="text-xl text-third">
@@ -38,7 +44,10 @@
           Time estimation
         </h2>
         <Paragraph
-          :paragraph="'With the amount of guesses needed to crack a password Zxcvbn then calculates the time to crack similarly as shown in chapter four. The algorithm comes with the time estimation for two online cracking scenarios and two offline scenarios with different amounts of guesses per second. One of each is shown below.'"
+          :paragraph="'With the amount of guesses needed to crack a password Zxcvbn then calculates the time to ' +
+           'crack similarly as shown in chapter four. The algorithm comes with the time estimation for two online ' +
+            'cracking scenarios and two offline scenarios with different amounts of guesses per second. One of each ' +
+             'is shown below.'"
         />
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div>
@@ -58,7 +67,8 @@
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Scoring</h2>
         <Paragraph
-          :paragraph="'Based on the number of guesses, Zxcvbn will also calculate a score from $0$ to $4$ with $0$ indicating a very weak and $4$ indicating a very strong password.'"
+          :paragraph="'Based on the number of guesses, Zxcvbn will also calculate a score from $0$ to $4$ with ' +
+           '$0$ indicating a very weak and $4$ indicating a very strong password.'"
         />
         <div class="mb-10 rounded bg-font-light p-10 italic">
           <div>

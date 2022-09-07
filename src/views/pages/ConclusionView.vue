@@ -3,7 +3,9 @@
     <template>
       <main>
         <Paragraph
-          :paragraph="'Zxcvbn may not be the one and only solution. But it efficiently shows one thing: The common approach to password composition does not provide us with more secure passwords. On the contrary. Policies, that prompt us to use a certain set of characters and length only result in three things:'"
+          :paragraph="'Zxcvbn may not be the one and only solution. But it efficiently shows one thing: The common ' +
+           'approach to password composition does not provide us with more secure passwords. On the contrary. ' +
+            'Policies, that prompt us to use a certain set of characters and length only result in three things:'"
         />
         <ul class="ml-10 list-disc italic">
           <li>
@@ -20,7 +22,9 @@
           </li>
         </ul>
         <Paragraph
-          :paragraph="'Easily memorable passwords which consist of a combination of random words on the other hand are way more difficult to guess. At the same time our brains have the ability to creatively come up with a mnemonic aid. Take this famous comic for example:'"
+          :paragraph="'Easily memorable passwords which consist of a combination of random words on the other hand ' +
+           'are way more difficult to guess. At the same time our brains have the ability to creatively come up with ' +
+            'a mnemonic aid. Take this famous comic for example:'"
         />
 
         <figure>
@@ -31,15 +35,19 @@
         </figure>
 
         <Paragraph
-          :paragraph="'Years of counterproductive password policies have planted the wrong idea of what an actual strong password looks like. Zxcvbn can help to show the actual strength with its estimation algorithms and could therefore replace common password validation on many websites.'"
+          :paragraph="'Years of counterproductive password policies have planted the wrong idea of what an actual ' +
+           'strong password looks like. Zxcvbn can help to show the actual strength with its estimation algorithms ' +
+            'and could therefore replace common password validation on many websites.'"
         />
         <Paragraph
-          :paragraph="'Now, with everything you\'ve learned so far, submit your password to the Zxcvbn algorithm once again and watch the horse scale for reference.'"
+          :paragraph="'Now, with everything you\'ve learned so far, submit your password to the Zxcvbn algorithm ' +
+           'once again and watch the horse scale for reference.'"
         />
         <div class="mb-20 mt-5">
           <div
             v-click-outside="setInputUnFocused"
-            class="relative my-4 inline-block border-b-[1px] border-l-[1px] border-font-dark focus-within:border-secondary"
+            class="relative my-4 inline-block border-b-[1px] border-l-[1px] border-font-dark
+            focus-within:border-secondary"
           >
             <label
               class="absolute top-0 left-2 origin-left duration-300"

@@ -36,7 +36,8 @@ export const validatePassword = (password = '', ref) => {
 			return 'Password must contain exactly 3 spaces! (Dear attackers, please pretend you never read that.)';
 		}
 		else {
-			return 'Way to go - you\'re almost there! Password must contain at least 1 hieroglyph, 1 Klingon numeral, your firstborn and an emoji. Please try again!';
+			return 'Way to go - you\'re almost there! Password must contain at least 1 hieroglyph, 1 Klingon ' +
+				'numeral, your firstborn and an emoji. Please try again!';
 		}
 	}
 	else {

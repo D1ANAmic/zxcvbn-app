@@ -3,15 +3,20 @@
     <template>
       <main>
         <Paragraph
-          :paragraph="'The matching process is based on the idea of emulating a real life attack. An attacker would try out certain patterns that have been proven to be common in password composition.'"
+          :paragraph="'The matching process is based on the idea of emulating a real life attack. An attacker would ' +
+           'try out certain patterns that have been proven to be common in password composition.'"
         />
         <Paragraph
-          :paragraph="'During the matching phase, a set of all possible patterns detected in the password are collected. Patterns may also overlap. The algorithm recognizes five distinctive patterns.'"
+          :paragraph="'During the matching phase, a set of all possible patterns detected in the password are ' +
+           'collected. Patterns may also overlap. The algorithm recognizes five distinctive patterns.'"
         />
         <div class="mb-20">
           <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Token</h2>
           <Paragraph
-            :paragraph="'The token matching iterates over one or more dictionaries and tries to find a given password. Uppercase letters and <a href=\'https://en.wikipedia.org/wiki/Leet\' target=\'_blank\' class=\'underline\'>l33tspeak</a> are transformed into the lowercase representation of the string beforehand.'"
+            :paragraph="'The token matching iterates over one or more dictionaries and tries to find a given ' +
+             'password. Uppercase letters and <a href=\'https://en.wikipedia.org/wiki/Leet\' target=\'_blank\' ' +
+              'class=\'underline\'>l33tspeak</a> are transformed into the lowercase representation of the string ' +
+               'beforehand.'"
           />
 
           <div class="flex flex-col items-center">
@@ -61,7 +66,8 @@
         <div class="mb-20">
           <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Sequence</h2>
           <Paragraph
-            :paragraph="'The sequence matching is based on the unicode representation of a symbol. The algorithm determines if a sequence is present according to the delta between two adjacent symbols.'"
+            :paragraph="'The sequence matching is based on the unicode representation of a symbol. The algorithm ' +
+             'determines if a sequence is present according to the delta between two adjacent symbols.'"
           />
           <div class="flex flex-col items-center">
             <div
@@ -146,7 +152,8 @@
         <div class="mb-20">
           <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Repeat</h2>
           <Paragraph
-            :paragraph="'The repeat matcher searches for symbol repetitions through regular expressions. The longest match will always be prioritized.'"
+            :paragraph="'The repeat matcher searches for symbol repetitions through regular expressions. The ' +
+             'longest match will always be prioritized.'"
           />
           <div class="flex flex-col items-center">
             <div
@@ -182,7 +189,9 @@
         <div class="mb-20">
           <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Keyboard</h2>
           <Paragraph
-            :paragraph="'The keyboard matcher analyzes the password for keyboard patterns by keeping track of neighbouring keys. If the next key is adjacent to the previous one it will match. Zxcvbn supports different keyboard layouts per default. Additional ones can be added.'"
+            :paragraph="'The keyboard matcher analyzes the password for keyboard patterns by keeping track of ' +
+             'neighbouring keys. If the next key is adjacent to the previous one it will match. Zxcvbn supports ' +
+              'different keyboard layouts per default. Additional ones can be added.'"
           />
           <div class="flex flex-col items-center">
             <div
@@ -213,7 +222,8 @@
         <div class="mb-20">
           <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Date</h2>
           <Paragraph
-            :paragraph="'Numerical strings with 4 to 8 adjacent digits are being checked for date representations. To be identified as a date, the following requirements have to be met:'"
+            :paragraph="'Numerical strings with 4 to 8 adjacent digits are being checked for date representations. ' +
+             'To be identified as a date, the following requirements have to be met:'"
           />
           <em>
             <ul class="ml-10 mb-10 list-disc">
@@ -312,7 +322,9 @@
         </div>
 
         <Paragraph
-          :paragraph="'A password can contain multiple matches out of these five categories. By the end of the matching phase, all pattern occurrences are saved in one set. Up to this point it is not determined which of these patterns will be considered for the guessing and score evaluation.'"
+          :paragraph="'A password can contain multiple matches out of these five categories. By the end of the ' +
+           'matching phase, all pattern occurrences are saved in one set. Up to this point it is not determined ' +
+            'which of these patterns will be considered for the guessing and score evaluation.'"
         />
       </main>
     </template>

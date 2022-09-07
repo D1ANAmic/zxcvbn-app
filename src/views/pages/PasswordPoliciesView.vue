@@ -3,12 +3,16 @@
     <template>
       <main>
         <Paragraph
-          :paragraph="'Don\'t we all dread this well known scenario: In order to use any kind of online service these days, it\'s inevitable to create an account first. While in theory this procedure sounds like just a short inconvenience, in reality most of the time is spent on finding a suitable password that complies with the website\'s password policy.'"
+          :paragraph="'Don\'t we all dread this well known scenario: In order to use any kind of online service ' +
+           'these days, it\'s inevitable to create an account first. While in theory this procedure sounds like ' +
+            'just a short inconvenience, in reality most of the time is spent on finding a suitable password that ' +
+             'complies with the website\'s password policy.'"
         />
         <div class="mb-4 mt-5">
           <div
             v-click-outside="setInputUnFocused"
-            class="relative my-4 inline-block border-b-[1px] border-l-[1px] border-font-dark focus-within:border-secondary"
+            class="relative my-4 inline-block border-b-[1px] border-l-[1px] border-font-dark
+            focus-within:border-secondary"
           >
             <label
               class="absolute top-0 left-2 origin-left duration-300"
@@ -37,7 +41,8 @@
           </p>
         </div>
         <Paragraph
-          :paragraph="'Most of these password policies are not only very inconvenient, they also differ from website to website.'"
+          :paragraph="'Most of these password policies are not only very inconvenient, they also differ from ' +
+           'website to website.'"
         />
         <PasswordPoliciesCarousel />
         <Paragraph

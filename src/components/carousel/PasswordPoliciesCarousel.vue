@@ -9,7 +9,8 @@
         :key="index"
         :id="`carousel-item-${index}`"
         data-carousel-item="active"
-        class="absolute top-1/2 left-1/2 block flex h-full w-full -translate-x-1/2 -translate-y-1/2 bg-font-light transition-opacity duration-1000 ease-in-out"
+        class="absolute top-1/2 left-1/2 block flex h-full w-full -translate-x-1/2 -translate-y-1/2 bg-font-light
+        transition-opacity duration-1000 ease-in-out"
         :class="index !== getCurrentElement ? 'opacity-0' : 'opacity-1'"
       >
         <img :src="imageSources[index]" class="m-auto w-3/4" />
@@ -23,7 +24,8 @@
         v-for="(_, index) in imageSources"
         :key="index"
         :id="`carousel-indicator-${index}`"
-        class="h-3 w-3 cursor-pointer rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500 ease-in-out hover:bg-opacity-50"
+        class="h-3 w-3 cursor-pointer rounded-full bg-font-dark bg-opacity-20 transition delay-75 duration-500
+        ease-in-out hover:bg-opacity-50"
         @click="setCurrentSlide(index)"
       ></div>
     </div>
@@ -35,7 +37,8 @@
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500
+          ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
         >
           <i class="fa-solid fa-chevron-left text-dark"></i>
         </span>
@@ -48,7 +51,8 @@
     >
       <template #icon>
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500 ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full transition delay-75 duration-500
+          ease-in-out hover:bg-opacity-50 hover:text-primary md:bg-font-dark md:bg-opacity-20"
         >
           <i class="fa-solid fa-chevron-right text-dark"></i>
         </span>

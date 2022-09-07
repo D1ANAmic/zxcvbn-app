@@ -1,5 +1,6 @@
 // enforces mathjax to render formulas again at the next opportunity
-// this is necessary in dynamic web apps where the content may appear after MathJax has already typeset the rest of the page
+// this is necessary in dynamic web apps where the content may appear after MathJax has already typeset the rest of
+// the page
 
 const isMathJaxInWindowObject = () => 'MathJax' in window;
 

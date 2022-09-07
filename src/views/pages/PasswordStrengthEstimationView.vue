@@ -12,13 +12,17 @@
           </ul>
         </em>
         <Paragraph
-          :paragraph="'Let\'s use the word <em>password</em> which has a length $L$ of $8$ within the range $N$ of $26$ possible characters given the fact that the word only consists of lowercase letters from the roman alphabet. That leaves us with a pool of $26⁸$ possible passwords.'"
+          :paragraph="'Let\'s use the word <em>password</em> which has a length $L$ of $8$ within the range $N$ of ' +
+           '$26$ possible characters given the fact that the word only consists of lowercase letters from the ' +
+            'roman alphabet. That leaves us with a pool of $26⁸$ possible passwords.'"
         />
         <Paragraph
-          :paragraph="'Because of their exponential character, these numbers can easily get out of human comprehensible bounds. Hence, password strength is usually specified as entropy $H$ with a unit of bits.'"
+          :paragraph="'Because of their exponential character, these numbers can easily get out of human ' +
+           'comprehensible bounds. Hence, password strength is usually specified as entropy $H$ with a unit of bits.'"
         />
         <Paragraph
-          :paragraph="'Try it out yourself. Change the length of the password and choose from these common alphabets to see how the entropy changes.'"
+          :paragraph="'Try it out yourself. Change the length of the password and choose from these common ' +
+           'alphabets to see how the entropy changes.'"
         />
         <div class="rounded bg-font-light p-10">
           <div class="mb-8">
@@ -60,7 +64,9 @@
           </div>
         </div>
         <Paragraph
-          :paragraph="'Statistically speaking, an attacker needs on average half of all possible character combinations in order to guess the password. Guesses can also be expressed as two to the power of the entropy reduced by one.'"
+          :paragraph="'Statistically speaking, an attacker needs on average half of all possible character ' +
+           'combinations in order to guess the password. Guesses can also be expressed as two to the power of ' +
+            'the entropy reduced by one.'"
         />
         <Paragraph :paragraph="guessesFormula" />
       </main>

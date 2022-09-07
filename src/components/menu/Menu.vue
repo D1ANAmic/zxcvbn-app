@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div
-    class="pl-15 fixed flex h-screen basis-1/2 flex-col overflow-y-auto bg-secondary p-5 text-left font-prozaLibre text-sm text-font-light md:min-w-[30%] md:max-w-[30%] md:py-20 lg:relative lg:h-auto lg:p-10 xl:text-base"
+    class="pl-15 fixed flex h-screen basis-1/2 flex-col overflow-y-auto bg-secondary p-5 text-left font-prozaLibre
+    text-sm text-font-light md:min-w-[30%] md:max-w-[30%] md:py-20 lg:relative lg:h-auto lg:p-10 xl:text-base"
   >
     <div class="m-auto flex flex-col justify-center">
       <ul class="m-auto flex h-1/2 flex-col justify-evenly">
