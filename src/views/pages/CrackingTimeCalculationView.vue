@@ -4,7 +4,7 @@
       <main class="tex2jax_process">
         <Paragraph
           :paragraph="'Now that we know how many guesses an attacker needs to crack the password, we can derive the ' +
-           'time to crack $t_{crack}$.'"
+           'time to crack $t_{C}$.'"
         />
         <Paragraph
           :paragraph="'Modern GPUs can execute approximately $10$ billion ' +
@@ -129,9 +129,9 @@ export default {
 		return {
 			passwordEntropyString:
         '$$H = log_{2}(95^9) = ' + this.calculateEntropy(95, 9) + '$$',
-			passwordGuessesString: '$$g = \\frac{95^9}{2} = 2^{59-1} = 2^{58}$$',
+			passwordGuessesString: '$$G = \\frac{95^9}{2} = 2^{59-1} = 2^{58}$$',
 			crackingTimeString:
-        '$$t_{crack} = \\frac{2^{58}}{10 \\text{B}} = 167 \\text{ d}$$',
+        '$$t_{C} = \\frac{2^{58}}{10 \\text{B}} = 167 \\text{ d}$$',
 			averageCostPerGPUPerHour: 0.3
 		};
 	},
@@ -139,7 +139,7 @@ export default {
 		...mapState(['passwordEntropy', 'numberOfGPUs']),
 		getTimeToCrackFormula() {
 			return (
-				'$t_{crack} = \\frac{' +
+				'$t_{C} = \\frac{' +
         this.getPowerOfTwoFormula() +
         '}{\\class{text-highlight1}{' +
         this.numberOfGPUs +

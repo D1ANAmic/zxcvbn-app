@@ -29,7 +29,7 @@
             <li>the 5th letter is in l33tspeak</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = 17 \cdot 2 \cdot 2 = 68$</span>
+            <span>$G = 17 \cdot 2 \cdot 2 = 68$</span>
           </div>
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Sequence</h2>
@@ -48,7 +48,7 @@
             <li>unicode delta is -2</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = 10 \cdot 3 \cdot |-2| = 60$</span>
+            <span>$G = 10 \cdot 3 \cdot |-2| = 60$</span>
           </div>
         </div>
 
@@ -70,7 +70,7 @@
             <li>string contains 2 repetitions</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = 1000 \cdot 2 = 2000$</span>
+            <span>$G = 1000 \cdot 2 = 2000$</span>
           </div>
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Keyboard</h2>
@@ -90,7 +90,7 @@
             <span class="text-xl text-third">xcvghui</span>
           </div>
           <div class="text-xl text-third">
-            <span>$g = 2^{22.4}$</span>
+            <span>$G = 2^{22.4}$</span>
           </div>
         </div>
         <h2 class="mt-0 mb-6 text-3xl font-medium leading-tight">Date</h2>
@@ -110,7 +110,7 @@
             <li>in 2022 the delta from 1596 adds up to 93 years</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = 93 \cdot 365 = 2^{13.6}$</span>
+            <span>$G = 93 \cdot 365 = 2^{13.6}$</span>
           </div>
         </div>
         <h2
@@ -140,11 +140,11 @@
               character pool based on the german alphabet which has 30 symbols
             </li>
 
-            <span>$$g = \frac{N^L}{2} =\frac{30^5}{2} = 2^{23,5}$$</span>
+            <span>$$G = \frac{N^L}{2} =\frac{30^5}{2} = 2^{23,5}$$</span>
             <li>Zxcvbn however obtains a way lower guessing count</li>
           </ul>
           <div class="text-xl text-third">
-            <span>$g = {10^5} = 2^{16,6} $</span>
+            <span>$G = {10^5} = 2^{16,6} $</span>
           </div>
         </div>
       </main>

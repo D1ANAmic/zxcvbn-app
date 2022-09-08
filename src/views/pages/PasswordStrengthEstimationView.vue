@@ -65,7 +65,7 @@
         </div>
         <Paragraph
           :paragraph="'Statistically speaking, an attacker needs on average half of all possible character ' +
-           'combinations in order to guess the password. Guesses can also be expressed as two to the power of ' +
+           'combinations in order to guess the password. Guesses $G$ can also be expressed as two to the power of ' +
             'the entropy reduced by one.'"
         />
         <Paragraph :paragraph="guessesFormula" />
@@ -110,7 +110,7 @@ export default {
 				}
 			},
 			passwordRange: 26,
-			guessesFormula: '$$g = \\frac{N^L}{2} = 2^{H-1}$$'
+			guessesFormula: '$$G = \\frac{N^L}{2} = 2^{H-1}$$'
 		};
 	},
 	computed: {
